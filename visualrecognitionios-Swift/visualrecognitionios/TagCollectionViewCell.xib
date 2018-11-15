@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11201" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="TagCollectionViewCell" id="gTV-IL-0wX" customClass="TagCollectionViewCell" customModule="visualrecognitionios" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="130" height="30"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="130" height="30"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="MOUNTAIN" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Q3t-zM-jZQ">
+                        <fontDescription key="fontDescription" type="boldSystem" pointSize="13"/>
+                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+            </view>
+            <color key="backgroundColor" red="0.2901960784" green="0.56470588239999997" blue="0.8862745098" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="Q3t-zM-jZQ" firstAttribute="centerX" secondItem="gTV-IL-0wX" secondAttribute="centerX" id="3aA-h5-ZmE"/>
+                <constraint firstItem="Q3t-zM-jZQ" firstAttribute="centerY" secondItem="gTV-IL-0wX" secondAttribute="centerY" id="NSu-ho-YZR"/>
+                <constraint firstItem="Q3t-zM-jZQ" firstAttribute="centerX" secondItem="gTV-IL-0wX" secondAttribute="centerX" id="OVs-IB-a4E"/>
+                <constraint firstItem="Q3t-zM-jZQ" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="30" id="pK7-Ib-B1p"/>
+            </constraints>
+            <variation key="default">
+                <mask key="constraints">
+                    <exclude reference="OVs-IB-a4E"/>
+                    <exclude reference="pK7-Ib-B1p"/>
+                </mask>
+            </variation>
+            <connections>
+                <outlet property="tagLabel" destination="Q3t-zM-jZQ" id="Y9s-pr-Mea"/>
+            </connections>
+        </collectionViewCell>
+    </objects>
+</document>

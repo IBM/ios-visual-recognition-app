@@ -1,0 +1,4 @@
+# Use a project from GitHub
+github "watson-developer-cloud/swift-sdk" ~> 0.29.0
+
+
