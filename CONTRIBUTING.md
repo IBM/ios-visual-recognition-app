@@ -1,1 +1,14 @@
-<html><body>You are being <a href="https://github.ibm.com/login?return_to=https%3A%2F%2Fgithub.ibm.com%2FIBMCode%2FIBMCodeContent%2Fblob%2Fmaster%2Fdocs%2Fpatterns%2Ftemplates%2FCONTRIBUTING.md">redirected</a>.</body></html>
+# Contributing
+
+This is an open source project, and we appreciate your help!
+
+We use the GitHub issue tracker to discuss new features and non-trivial bugs.
+
+In addition to the issue tracker, [#journeys on
+Slack](https://dwopen.slack.com) is the best way to get into contact with the
+project's maintainers.
+
+To contribute code, documentation, or tests, please submit a pull request to
+the GitHub repository. Generally, we expect two maintainers to review your pull
+request before it is approved for merging. For more details, see the
+[MAINTAINERS](MAINTAINERS.md) page.
