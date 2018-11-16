@@ -1,0 +1,1 @@
+<html><body>You are being <a href="https://github.ibm.com/login?return_to=https%3A%2F%2Fgithub.ibm.com%2FIBMCode%2FIBMCodeContent%2Fblob%2Fmaster%2Fdocs%2Fpatterns%2Ftemplates%2FCONTRIBUTING.md">redirected</a>.</body></html>
