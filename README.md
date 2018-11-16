@@ -1,5 +1,3 @@
-<img src="https://bluemixassets.eu-gb.mybluemix.net/api/Products/image/logos/visual-recognition.svg?key=[starter-watson-visual-recognition]&event=readme-image-view" alt="Watson Visual Recognition Logo" width="200px"/>
-
 # Create an iOS application in Swift which uses image recognition
 
 ## Visual Recognition
