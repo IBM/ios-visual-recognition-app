@@ -3,7 +3,7 @@
 
 # Create an iOS application in Swift which uses image recognition
 
-This Bluemix Mobile Starter will showcase the Visual Recognition service from Watson and give you integration points for each of the Bluemix Mobile services.
+This IBM Cloud Mobile Starter will showcase the Visual Recognition service from Watson and give you integration points for each of the IBM Cloud Mobile services.
 
 ## Requirements
 
@@ -11,9 +11,9 @@ This Bluemix Mobile Starter will showcase the Visual Recognition service from Wa
 * Xcode 8
 * Swift 3.0
 
-## Bluemix Mobile services Dependency Management
+## IBM Cloud Mobile services Dependency Management
 
-The Bluemix Mobile services SDK uses [CocoaPods](https://cocoapods.org/) to manage and configure dependencies. To use our latest SDKs you need version 1.1.0.rc.2.
+The IBM Cloud Mobile services SDK uses [CocoaPods](https://cocoapods.org/) to manage and configure dependencies. To use our latest SDKs you need version 1.1.0.rc.2.
 
 You can install CocoaPods using the following command:
 
