@@ -3,6 +3,8 @@
 
 # Create an iOS application in Swift which uses image recognition
 
+> We have a similar pattern available for [Android](https://github.com/IBM/visual-recognition-android), as well!
+
 This IBM Cloud Mobile Starter will showcase the Visual Recognition service from Watson and give you integration points for each of the IBM Cloud Mobile services.
 
 ![](README_Images/architecture.png)
