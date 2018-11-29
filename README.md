@@ -5,6 +5,8 @@
 
 This IBM Cloud Mobile Starter will showcase the Visual Recognition service from Watson and give you integration points for each of the IBM Cloud Mobile services.
 
+![](README_Images/architecture.png)
+
 ## Requirements
 
 * iOS 8.0+
