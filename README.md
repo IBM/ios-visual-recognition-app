@@ -5,17 +5,28 @@
 
 > We have a similar pattern available for [Android](https://github.com/IBM/visual-recognition-android), as well!
 
-This IBM Cloud Mobile Starter will showcase the Visual Recognition service from Watson and give you integration points for each of the IBM Cloud Mobile services.
+In this code pattern, you will create a mobile app that showcases computer vision by labeling what the device's camera sees. You will provision a Visual Recognition service where you can either leverage a demo model or train your own custom model.
+
+When you have completed this code pattern, you will understand how to:
+
+* Customize Watson Visual Recognition for your unique use case
+* View the labels related to a picture and the estimated accuracy of that label
 
 ![](README_Images/architecture.png)
 
-## Requirements
+## Steps
+
+1. Requirements
+1. Watson Credential Management
+1. Run
+
+### 1. Requirements
 
 * iOS 8.0+
 * Xcode 8
 * Swift 3.0
 
-## IBM Cloud Mobile services Dependency Management
+#### IBM Cloud Mobile services Dependency Management
 
 The IBM Cloud Mobile services SDK uses [CocoaPods](https://cocoapods.org/) to manage and configure dependencies. To use our latest SDKs you need version 1.1.0.rc.2.
 
@@ -48,7 +59,7 @@ $ pod install
 
 > [View configuration](#configuration)
 
-## Watson Dependency Management
+### Watson Dependency Management
 
 This starter uses the Watson Developer Cloud iOS SDK in order to use the Watson Visual Recognition service.
 
@@ -88,11 +99,11 @@ If you build your Carthage frameworks in a separate folder, you will have to dra
 
 > [View configuration](#configuration)
 
-## Watson Credential Management
+## 2. Watson Credential Management
 
 Once the dependencies have been built and configured for the Bluemix Mobile service SDKs as well as the Watson Developer Cloud SDK, no more actions are needed! The unique credentials to your Bluemix Visual Recognition service have been injected into the application during generation.
 
-## Run
+## 3. Run
 
 You can now run the application on a simulator or physical device:
 
