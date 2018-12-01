@@ -5,7 +5,7 @@
 
 > We have a similar pattern available for [Android](https://github.com/IBM/visual-recognition-android), as well!
 
-In this code pattern, you will create a mobile app that showcases computer vision by labeling what the device's camera sees. You will provision a Visual Recognition service where you can either leverage a demo model or train your own custom model.
+In this code pattern, you will create an iOS app that showcases computer vision by labeling what the device's camera sees. You will provision a Visual Recognition service where you can either leverage a demo model or train your own custom model.
 
 When you have completed this code pattern, you will understand how to:
 
