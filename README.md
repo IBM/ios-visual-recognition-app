@@ -16,19 +16,19 @@ When you have completed this code pattern, you will understand how to:
 
 ## Steps
 
-1. Requirements
-1. Watson Credential Management
-1. Run
+1. [Install development dependencies](#1-install-development-dependencies)
+1. [Watson Credential Management](2-watson-credential-management)
+1. [Run](#3-run)
 
-### 1. Requirements
+### 1. Install development dependencies
+
+Ensure you have the correct [development tools](https://developer.apple.com/) installed to work with:
 
 * iOS 8.0+
 * Xcode 8
 * Swift 3.0
 
-#### IBM Cloud Mobile services Dependency Management
-
-The IBM Cloud Mobile services SDK uses [CocoaPods](https://cocoapods.org/) to manage and configure dependencies. To use our latest SDKs you need version 1.1.0.rc.2.
+Next, the IBM Cloud Mobile services SDK uses [CocoaPods](https://cocoapods.org/) to manage and configure dependencies. To use our latest SDKs you need version _1.1.0.rc.2_.
 
 You can install CocoaPods using the following command:
 
@@ -36,19 +36,19 @@ You can install CocoaPods using the following command:
 $ sudo gem install cocoapods --pre
 ```
 
-If the CocoaPods repository is not confifgured, run the following command:
+If the CocoaPods repository is not already configured, run the following command:
 
 ```bash
 $ pod setup
 ```
 
-For this starter, a pre-configured `Podfile` has been included in the **(projectrootdirectory)/Podfile** location. To download and install the required dependencies, run the following command in the **(projectrootdirectory)**:
+A `Podfile` is included in the root of this repository. To download and install the required dependencies, run the following command from the root of the repository:
 
 ```bash
 $ pod install
 ```
 
-Now Open the Xcode workspace: `{APP_Name}.xcworkspace`. From now on, open the `.xcworkspace` file becuase it contains all the dependencies and configurations.
+Now open the Xcode workspace, `{APP_Name}.xcworkspace`. From now on, open the `.xcworkspace` file becuase it contains all the dependencies and configurations.
 
 If you run into any issues during the pod install, it is recommended to run a pod update by using the following commands:
 
@@ -57,11 +57,7 @@ $ pod update
 $ pod install
 ```
 
-> [View configuration](#configuration)
-
-### Watson Dependency Management
-
-This starter uses the Watson Developer Cloud iOS SDK in order to use the Watson Visual Recognition service.
+Next, this pattern uses the Watson Developer Cloud iOS SDK in order to use the Watson Visual Recognition service.
 
 The Watson Developer Cloud iOS SDK uses [Carthage](https://github.com/Carthage/Carthage) to manage dependencies and build binary frameworks.
 
@@ -78,9 +74,7 @@ To use the Watson Developer Cloud iOS SDK in any of your applications, specify i
 github "watson-developer-cloud/ios-sdk"
 ```
 
-For this starter, a pre-configured `Cartfile` has been included in the **(projectrootdirectory)/Cartfile** location
-
-Run the following command to build the dependencies and frameworks:
+A pre-configured `Cartfile` has been included in the root of the repository. Run the following command to build the dependencies and frameworks:
 
 ```bash
 $ carthage update --platform iOS
@@ -88,20 +82,18 @@ $ carthage update --platform iOS
 
 > **Note**: You may have to run `carthage update --platform iOS --no-use-binaries`, if the binary is a lower version than your current version of Swift.
 
-Once the build has completed, the frameworks can be found in the **(projectrootdirectory)/Carthage/Build/iOS/** folder. The Xcode project in this starter already includes framework links to the following frameworks in this directory:
+Once the build has completed, the frameworks can be found in the `(projectrootdirectory)/Carthage/Build/iOS/` folder. The Xcode project in this pattern already includes framework links to the following frameworks in this directory:
 
-* **VisualRecognitionV3.framework**
-* **RestKit.framework**
+* `VisualRecognitionV3.framework`
+* `RestKit.framework`
 
 ![ConfiguredFrameworks](README_Images/ConfiguredFrameworks.png)
 
-If you build your Carthage frameworks in a separate folder, you will have to drag-and-drop the above frameworks into your project and link them in order to run this starter successfully.
-
-> [View configuration](#configuration)
+If you build your Carthage frameworks in a separate folder, you will have to drag-and-drop the above frameworks into your project and link them in order to run this pattern successfully.
 
 ## 2. Watson Credential Management
 
-Once the dependencies have been built and configured for the Bluemix Mobile service SDKs as well as the Watson Developer Cloud SDK, no more actions are needed! The unique credentials to your Bluemix Visual Recognition service have been injected into the application during generation.
+Once the dependencies have been built and configured for the IBM Cloud Mobile service SDKs as well as the Watson Developer Cloud SDK, no more actions are needed! The unique credentials to your IBM Cloud Visual Recognition service have been injected into the application during generation.
 
 ## 3. Run
 
