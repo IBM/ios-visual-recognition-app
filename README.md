@@ -17,7 +17,7 @@ When you have completed this code pattern, you will understand how to:
 ## Steps
 
 1. [Install development dependencies](#1-install-development-dependencies)
-1. [Watson Credential Management](2-watson-credential-management)
+1. [Watson Credential Management](#2-watson-credential-management)
 1. [Run](#3-run)
 
 ### 1. Install development dependencies
