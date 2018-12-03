@@ -16,6 +16,8 @@ When you have completed this code pattern, you will understand how to:
 
 ## Steps
 
+> As an alternative to steps 1 & 2 below, you can [create this project as a starter kit](https://console.bluemix.net/developer/mobile/create-app?defaultDeploymentToolchain=&defaultLanguage=IOS_SWIFT&env_id=ibm%3Ayp%3Aus-south&starterKit=22179578-addd-392f-bbf8-b1b128dd9cb8&tenantNavMode=true) on IBM Cloud, which automatically provisions required services, and injects service credentials into a custom fork of this pattern. Then, you can skip directly to step 3 below.
+
 1. [Install development dependencies](#1-install-development-dependencies)
 1. [Configure service credentials](#2-configure-service-credentials)
 1. [Run](#3-run)
