@@ -93,13 +93,13 @@ Once the build has completed, the frameworks can be found in the `(projectrootdi
 
 If you build your Carthage frameworks in a separate folder, you will have to drag-and-drop the above frameworks into your project and link them in order to run this pattern successfully.
 
-## 2. Configure service credentials
+### 2. Configure service credentials
 
 Use the [IBM Cloud Catalog](https://console.bluemix.net/catalog/) to [create a Visual Recognition service instance](https://console.bluemix.net/catalog/services/visual-recognition) on the Lite plan.
 
 When the service has been created, navigate to the **Service credentials** tab, and create a **New credential ⊕** with the default options. Click **View credentials**. Edit `visualrecognitionios/BMSCredentials.plist` in your Xcode project to configure your application with your own service credentials.
 
-## 3. Run
+### 3. Run
 
 You can now run the application on a simulator or physical device:
 
