@@ -27,8 +27,8 @@ When you have completed this code pattern, you will understand how to:
 Ensure you have the correct [development tools](https://developer.apple.com/) installed to work with:
 
 * iOS 8.0+
-* Xcode 8
-* Swift 3.0
+* Xcode 10
+* Swift 3.0+
 
 Next, the IBM Cloud Mobile services SDK uses [CocoaPods](https://cocoapods.org/) to manage and configure dependencies. To use our latest SDKs you need version _1.1.0.rc.2_.
 
@@ -110,7 +110,7 @@ You can now run the application on a simulator or physical device:
 ![WatsonVisualRecognitionFinished](README_Images/WatsonVisualRecognitionFinished.png)
 ![WatsonVisualRecognitionTagsPercentage](README_Images/WatsonVisualRecognitionTagsPercentage.png)
 
-The application allows you to do Visual Recognition for images from your Photo Library or from an image you take using your device's camera (physical device only). Take a photo using your device's camera or choose a photo from your library using the toolbar buttons on the bottom of the application. Once an image is chosen, the Watson Visual Recognition service will analyze the photo and create tags for the photo. You can click the tags to see a percentage value which shows how confident Watson is. For an image with a face present, Watson will attempt to show a gender and age value as well as a celebrity match if one is provided.
+The application allows you to do Visual Recognition for images from your Photo Library or from an image you take using a physical device's camera. Take a photo using your device's camera or choose a photo from your library using the toolbar buttons on the bottom of the application. Once an image is chosen, the Watson Visual Recognition service will analyze the photo and create tags for the photo. You can click the tags to see a percentage value which shows how confident Watson is. For an image with a face present, Watson will attempt to show a gender and age value as well as a celebrity match if one is provided.
 
 ## License
 
