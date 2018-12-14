@@ -1,5 +1,5 @@
 /**
- * Copyright IBM Corporation 2016
+ * Copyright IBM Corporation 2018
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -21,7 +21,6 @@ class TagCollectionViewCell: UICollectionViewCell {
     // UILabel that displays the tag string
     @IBOutlet weak var tagLabel: UILabel!
 
-    
     // Method called upon awake from nib
     override func awakeFromNib() {
         super.awakeFromNib()
