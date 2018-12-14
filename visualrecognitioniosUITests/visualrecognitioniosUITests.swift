@@ -2,6 +2,9 @@
 //  visualrecognitioniosUITests.swift
 //  visualrecognitioniosUITests
 //
+//  Created by Aaron Liberatore on 2/8/18.
+//  Copyright © 2018 IBM. All rights reserved.
+//
 
 import XCTest
 

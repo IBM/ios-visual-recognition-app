@@ -1,7 +1,18 @@
-//
-//  ViewController.swift
-//  visualrecognitionios
-//
+/**
+ * Copyright IBM Corporation 2018
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ * http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ **/
 
 import UIKit
 import SwiftSpinner
@@ -12,7 +23,10 @@ import BMSCore
 
 
 
-class ViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+
+
+
+class ViewController: UIViewController, UICollectionViewDataSource, UINavigationControllerDelegate {
 
     // UIToolbar item for camera selector
     @IBOutlet weak var cameraSelector: UIToolbar!
@@ -24,13 +38,14 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
     @IBOutlet weak var tagCollectionView: UICollectionView!
     // UIImageView that will show analyzed photo
     @IBOutlet weak var visualRecognitionImage: UIImageView!
+
     // VisualRecognition Object
     var visualRecognition: VisualRecognition!
     // Array of TagItems
     var tagItems: [TagItem] = []
-
+    
     override func viewDidLoad() {
-        
+
         super.viewDidLoad()
 
         // Create a TagItem for default image
@@ -38,42 +53,31 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
                                 watsonResultScore: 0.85,
                                 watsonResultScorePercentage: "85%"))
         // Create a TagItem for default image
-         tagItems.append(TagItem(watsonResultName: "Landscape",
+        tagItems.append(TagItem(watsonResultName: "Landscape",
                                  watsonResultScore: 0.60,
                                  watsonResultScorePercentage: "60%"))
 
-        // Initialize KTCenterFlowLayout and minimum spacing elements
-        let layout = KTCenterFlowLayout()
-        layout.minimumInteritemSpacing = 5.0
-        layout.minimumLineSpacing = 5.0
-        // Create and initialize nib and tagCollectionView
-        let bundle = Bundle(for: type(of: self))
-        let nib = UINib(nibName: "TagCollectionViewCell", bundle: bundle)
-        // Register the nib for tagCollectionView
-        tagCollectionView.register(nib, forCellWithReuseIdentifier: "TagCollectionViewCell")
-        // Set background color for collection view
-        self.tagCollectionView.backgroundColor = UIColor.clear
-        tagCollectionView.collectionViewLayout = layout
+        // Instantiate Watson Visual Recognition Service
+        self.configureVisualRecognition()
 
-        tagCollectionView.delegate = self
-        tagCollectionView.dataSource = self
+        // Configure Tag Collection View
+        self.configureTagCollectionView()
+
+        NotificationCenter.default.addObserver(self,
+                                               selector: #selector(didBecomeActive),
+                                               name: .UIApplicationDidBecomeActive,
+                                               object: nil)
+
         
-        NotificationCenter.default.addObserver(self, selector: #selector(didBecomeActive), name: NSNotification.Name.UIApplicationDidBecomeActive, object: nil)
+        
+        
+        
     }
 
     override func viewDidAppear(_ animated: Bool) {
-        // Create a configuration path for the BMSCredentials.plist file to read in Watson credentials
-        let configurationPath = Bundle.main.path(forResource: "BMSCredentials", ofType: "plist")
-        let configuration = NSDictionary(contentsOfFile: configurationPath!)
-        // Set the Watson credentials for Visual Recognition service from the BMSCredentials.plist
-        let visualRecognitionApiKey = configuration?["visualrecognitionApikey"] as! String
-        // Set date string for version of Watson service to use
-        let versionDate = "2018-03-19"
-        // Initialize Visual Recognition object
-        
-        visualRecognition = VisualRecognition(version: versionDate, apiKey: visualRecognitionApiKey)
         super.viewDidAppear(animated)
     }
+
     @objc
     func didBecomeActive(_ notification: Notification) {
         
@@ -88,12 +92,12 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
     // Button action that opens the camera to take a photo
     @IBAction func openCamera(_ sender: AnyObject) {
         // Check if the Camera source is available
-        if UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.camera) {
+        if UIImagePickerController.isSourceTypeAvailable(.camera) {
             // Create image picker using image picker controller
             let imagePicker = UIImagePickerController()
             imagePicker.delegate = self
             // Assign image picker source to the camera
-            imagePicker.sourceType = UIImagePickerControllerSourceType.camera;
+            imagePicker.sourceType = .camera
             // Assign the image picker allowsEditing field to true
             imagePicker.allowsEditing = true
             // Present the view controller
@@ -101,7 +105,7 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
         }
         // Show alert when the camera is unavailable
         else {
-            showAlert("Camera Unavailable", alertMessage: "The camera feature is currently unavaialbe on this device. If you are running the application on a simulator, please use a physical device in order to utilize camera functionality.")
+            showAlert(.cameraUnavailable)
         }
     }
 
@@ -113,42 +117,79 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
             let imagePicker = UIImagePickerController()
             imagePicker.delegate = self
             // Assign image picker source to the photo library
-            imagePicker.sourceType = UIImagePickerControllerSourceType.photoLibrary;
+            imagePicker.sourceType = UIImagePickerControllerSourceType.photoLibrary
             // Assign the image picker allowsEditing field false
             imagePicker.allowsEditing = true
             // Present the view controller
             self.present(imagePicker, animated: true, completion: nil)
         }
         // Show alert when photo library is unavailable
-        else{
-            showAlert("Photo Library Unavailable", alertMessage: "The Photo Library feature is currently unavaialbe on this device. Please try again.")
+        else {
+            showAlert(.photoLibraryUnavailable)
         }
     }
 
-    // Function that handles the actions once an image is chosen from the image picker controller
-    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingImage image: UIImage!, editingInfo: [AnyHashable: Any]!) {
-        // Set the visual recognition image to the chosen image
-        visualRecognitionImage.image = image
-        // Dismiss the view controller
-        self.dismiss(animated: true, completion: nil);
-        // Create a document URL to save the file into
-        let documentsURL = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!
-        // Save the image as a JPEG
-        let imageToSave:Data = UIImageJPEGRepresentation(image, 1.0)!
-        // Append file name to document location
-        let fileURL = documentsURL.appendingPathComponent("tempImage.png")
-        // Save the image in the provided location
-        try? imageToSave.write(to: fileURL, options: [])
-        // Clear the tagItems array
-        tagItems = []
-        // Call the classifyImage function with the saved image
-        classifyImage(fileURL)
-        // Call the detectFaces function with the saved image
-        detectFaces(fileURL)
+    // Configure VR Tag Collection View
+    func configureTagCollectionView() {
+        // Initialize KTCenterFlowLayout and minimum spacing elements
+        let layout = KTCenterFlowLayout()
+        layout.minimumInteritemSpacing = 5.0
+        layout.minimumLineSpacing = 5.0
+
+        // Create and initialize nib and tagCollectionView
+        let bundle = Bundle(for: type(of: self))
+        let nib = UINib(nibName: "TagCollectionViewCell", bundle: bundle)
+        // Register the nib for tagCollectionView
+        tagCollectionView.register(nib, forCellWithReuseIdentifier: "TagCollectionViewCell")
+        // Set background color for collection view
+        tagCollectionView.backgroundColor = UIColor.clear
+        tagCollectionView.collectionViewLayout = layout
+
+        tagCollectionView.delegate = self
+        tagCollectionView.dataSource = self
+    }
+
+    // Configure Visual Recognition Service
+    func configureVisualRecognition() {
+        // Create a configuration path for the BMSCredentials.plist file then read in the Watson credentials
+        // from the plist configuration dictionary
+        guard let configurationPath = Bundle.main.path(forResource: "BMSCredentials", ofType: "plist"),
+              let configuration = NSDictionary(contentsOfFile: configurationPath) else {
+                showAlert(.missingCredentials)
+                return
+        }
+
+        // Get the Service URL
+        guard let url = configuration["visualrecognitionUrl"] as? String else {
+            showAlert(.invalidCredentials)
+            return
+        }
+
+        // Set date string for version of Watson service to use
+        let versionDate = "2018-02-01"
+
+        // Set the Watson credentials for Visual Recognition service from the BMSCredentials.plist
+        // If using IAM authentication
+        if let apiKey = configuration["visualrecognitionApikey"] as? String {
+
+            // Create service sdks
+            self.visualRecognition = VisualRecognition(version: versionDate, apiKey: apiKey)
+
+        // If using user/pwd authentication
+        } else if let apiKey = configuration["visualrecognitionApi_key"] as? String {
+
+            // Create service sdks
+            self.visualRecognition = VisualRecognition(apiKey: apiKey, version: versionDate)
+
+        } else {
+            showAlert(.missingCredentials)
+        }
+
+        visualRecognition.serviceURL = url
     }
 
     // Function to classify image using Visual Recognition based on image location
-    func classifyImage(_ imageLocation: URL){
+    func classifyImage(_ imageLocation: URL) {
         // String that will hold the result name from Watson
         var resultName: String!
         // Double that will hold the result scored from Watson
@@ -156,14 +197,13 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
         // String that will hold the result score percentage from Watson
         var resultScorePercentage: String!
         // Classify image using Visual Recognition
-        visualRecognition.classify(imagesFile: imageLocation, failure: failVisualRecognitionWithError) {
-            classifiedImages in
+        visualRecognition.classify(imagesFile: imageLocation, failure: failVisualRecognitionWithError) { classifiedImages in
             // Loop through classified images
             for classifiedImage in classifiedImages.images {
                 // Loop through classifiers
-                for classifier in classifiedImage.classifiers{
+                for classifier in classifiedImage.classifiers {
                     // Loop through classsification results
-                    for classificationResult in classifier.classes{
+                    for classificationResult in classifier.classes {
                         // Set the result name, score and score percentage
                         resultName = classificationResult.className.uppercased()
                         resultScore = classificationResult.score
@@ -177,64 +217,56 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
                     }
                 }
             }
-            
-            DispatchQueue.main.sync {
-                // Reload the tag collection view with the new tag items
-                self.tagCollectionView.reloadData()
-                // Hide the spinner
-                SwiftSpinner.hide()
-            }
+
+            self.reloadCollectionViewTags()
         }
     }
 
     // Function to detect faces in image using Visual Recognition based on image location
-    func detectFaces(_ imageLocation: URL){
+    func detectFaces(_ imageLocation: URL) {
         // String that will hold the result name from Watson
         var resultName: String!
         // Double that will hold the result scored from Watson
         var resultScore: Double!
         // String that will hold the result score percentage from Watson
         var resultScorePercentage: String!
-        // Show the spinner while Watson is analyzing photo
-        SwiftSpinner.show("Watson is Analyzing Photo")
         // Detect faces using Visual Recognition
-        visualRecognition.detectFaces(imagesFile: imageLocation, failure: failVisualRecognitionWithError) {
-            detectedFaces in
+        visualRecognition.detectFaces(imagesFile: imageLocation, failure: failFaceDetectionWithError) { detectedFaces in
             // Loop through detected faces
             for detectedFace in detectedFaces.images {
                 // Loop through the faces found in detectedFaces
                 for face in detectedFace.faces {
-                    
-                    let gender = face.gender?.gender
-                    
                     // Set the result name, score and score percentage
                     // Handle optional min and max ages
-                    if let minAge = face.age?.min, let maxAge = face.age?.max, let genderScore = face.gender?.score, let faceScore = face.age?.score {
-                        
-                        resultName = gender! + "(\(minAge)-\(maxAge))"
-                        resultScorePercentage = String(Int(round(genderScore * 100))) + "% (" + String(Int(round(faceScore * 100))) + "%)"
-                        
-                    } else if let minAge = face.age?.min, let genderScore = face.gender?.score, let faceScore = face.age?.score {
-                        
-                        resultName = gender! + " (\(minAge)-?)"
-                        resultScorePercentage = String(Int(round(genderScore * 100))) + "% (" + String(Int(round(faceScore * 100))) + "%)"
+                    guard let age = face.age,
+                        let ageScore = age.score,
+                        let gender = face.gender,
+                        let genderScore = gender.score else{
+                        return
                     }
-                    else if let maxAge = face.age?.max, let genderScore = face.gender?.score, let faceScore = face.age?.score {
-                        
-                        resultName = gender! + " (?-\(maxAge)"
-                        resultScorePercentage = String(Int(round(genderScore * 100))) + "% (" + String(Int(round(faceScore * 100))) + "%)"
+                    if let minAge = age.min, let maxAge = age.max {
+                        resultName = gender.gender + " (" + String(describing: minAge) + "-" + String(describing: maxAge) + ")"
+                        resultScorePercentage = String(Int(round(genderScore * 100))) + "% (" + String(Int(round(ageScore * 100))) + "%)"
+
+                    } else if let minAge = age.min {
+                       resultName = gender.gender + " (" + String(describing: minAge) + "-?)"
+                       resultScorePercentage = String(Int(round(genderScore * 100))) + "% (" + String(Int(round(ageScore * 100))) + "%)"
+
+                    } else if let maxAge = age.max {
+                        resultName = gender.gender + " (?-" + String(describing: maxAge) + ")"
+                        resultScorePercentage = String(Int(round(genderScore * 100))) + "% (" + String(Int(round(ageScore * 100))) + "%)"
+
+                    } else {
+                        resultName = gender.gender
+                        resultScorePercentage = String(Int(round(genderScore * 100)))
                     }
-                    else {
-                        resultName = face.gender?.gender
-                        resultScorePercentage = String(Int(round((face.gender?.score)! * 100)))
-                    }
-                    resultScore = face.gender?.score
+                    resultScore = genderScore
                     // Create new tag item based on result name, score and score percentage
                     let newTagItem = TagItem(watsonResultName: resultName, watsonResultScore: resultScore, watsonResultScorePercentage: resultScorePercentage)
                     // Append the new tag item to the tag items array
                     self.tagItems.append(newTagItem)
                     // If celebrity match is found add set the result name, score, and score percentage
-                    if(face.identity != nil){
+                    if face.identity != nil {
                         resultName = face.identity?.name
                         resultScore = face.identity?.score
                         resultScorePercentage = String(Int(round(resultScore * 100))) + "% "
@@ -246,36 +278,69 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
                     }
                 }
             }
-            
-            DispatchQueue.main.sync {
-                // Reload the tag collection view with the new tag items
-                self.tagCollectionView.reloadData()
-                SwiftSpinner.hide()
-            }
+
+            self.reloadCollectionViewTags()
         }
     }
 
+    // Method to reload Collection View
+    func reloadCollectionViewTags() {
+        DispatchQueue.main.async {
+            // Reload the tag collection view with the new tag items
+            self.tagCollectionView.reloadData()
+            // Hide Spinner
+            SwiftSpinner.hide()
+        }
+    }
+
+    // Method to handle face recognition error
+    func failFaceDetectionWithError(_ error: Error) {
+        // Print the error to the console
+        print("Face Detection Error:", error)
+    }
+
+    // Method to handle Visual Recognition Error
     func failVisualRecognitionWithError(_ error: Error) {
         // Print the error to the console
         print(error)
         // Clear the tagItems array
         tagItems = []
-        // Reload the tag collection view with the new tag items
-        self.tagCollectionView.reloadData()
-        // Hide the spinner
-        SwiftSpinner.hide()
-        // Present an alert to the user describing what the problem may be
-        showAlert("Visual Recognition Failed", alertMessage: "The Visual Recognition service failed to analyze the given photo. This could be due to invalid credentials, Internet connection or other errors. Please verify your credentials in the WatsonCredentials.plist and rebuild the application. See the README for further assistance.")
-
+        // Update UI on main thread
+        DispatchQueue.main.async {
+            // Reload the tag collection view with the new tag items
+            self.tagCollectionView.reloadData()
+            // Hide the spinner
+            SwiftSpinner.hide()
+            // Present an alert to the user describing what the problem may be
+            self.showAlert(.error(error.localizedDescription))
+        }
     }
 
-    // Function to handle the number of items in the collection view
+    // Method to show an alert with an alertTitle String and alertMessage String
+    func showAlert(_ error: ApplicationError) {
+        // Log error
+        print(error.description)
+        // If an alert is not currently being displayed
+        if self.presentedViewController == nil {
+            // Set alert properties
+            let alert = UIAlertController(title: error.title, message: error.message, preferredStyle: .alert)
+            // Add an action to the alert
+            alert.addAction(UIAlertAction(title: "Dismiss", style: .default, handler: nil))
+            // Show the alert
+            self.present(alert, animated: true, completion: nil)
+        }
+    }
+}
+
+extension ViewController: UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
+
+    // Method to handle the number of items in the collection view
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         // Return the number of items in the tagItems array
         return self.tagItems.count
     }
 
-    // Funtion to get the cell for item at index path in the collection view
+    // Method to get the cell for item at index path in the collection view
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         // Create the cell that will reference the TagCollectionViewCell that is created
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "TagCollectionViewCell", for: indexPath) as? TagCollectionViewCell else {
@@ -295,46 +360,66 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
         self.tagCollectionView.reloadData()
     }
 
-    // Function that creates the collection view layout based on the size of each text string
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAtIndexPath indexPath: IndexPath) -> CGSize {
+    // Method that creates the collection view layout based on the size of each text string
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         // Get the size based on the text string
-        #if swift(>=4.0)
-            let size = NSString(string: self.tagItems[(indexPath as NSIndexPath).item].watsonResultName).size(withAttributes: nil)
-            // Return the given width and height
-        #else
-            let size = NSString(string: self.tagItems[(indexPath as NSIndexPath).item].watsonResultName).size(attributes: nil)
-        #endif
+        let size = NSString(string: self.tagItems[(indexPath as NSIndexPath).item].watsonResultName).size(withAttributes: nil)
 
         // Return the given width and height
         return CGSize(width: size.width + 60, height: 30.0)
     }
 
-
-    // Function that handles actions when the user selects an item in the collection view
+    // Method that handles actions when the user selects an item in the collection view
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         // Get the selected cell
         let cell = collectionView.cellForItem(at: indexPath) as? TagCollectionViewCell
         // If the cell text is currently the watson result name, change the text to the corresponding percentage
-        if(cell?.tagLabel.text == self.tagItems[(indexPath as NSIndexPath).item].watsonResultName) {
+        if cell?.tagLabel.text == self.tagItems[(indexPath as NSIndexPath).item].watsonResultName {
             cell?.tagLabel.text = self.tagItems[(indexPath as NSIndexPath).item].watsonResultScorePercentage
         }
-        // Otherwise change the text to the Watson result name
+            // Otherwise change the text to the Watson result name
         else {
             cell?.tagLabel.text = self.tagItems[(indexPath as NSIndexPath).item].watsonResultName
         }
     }
+}
 
-    // Function to show an alert with an alertTitle String and alertMessage String
-    func showAlert(_ alertTitle: String, alertMessage: String) {
-        // If an alert is not currently being displayed
-        if(self.presentedViewController == nil) {
-            // Set alert properties
-            let alert = UIAlertController(title: alertTitle, message: alertMessage, preferredStyle: UIAlertControllerStyle.alert)
-            // Add an action to the alert
-            alert.addAction(UIAlertAction(title: "Dismiss", style: UIAlertActionStyle.default, handler: nil))
-            // Show the alert
-            self.present(alert, animated: true, completion: nil)
-        }
+extension ViewController: UIImagePickerControllerDelegate {
+
+    // Method that dismisses the image picker controller when the user cancel selecting an image
+    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+        dismiss(animated: true)
     }
 
+    // Method that handles the actions once an image is chosen from the image picker controller
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
+
+        // Retrieve image from dictionary
+        guard let image = info[UIImagePickerControllerOriginalImage] as? UIImage else {
+            return
+        }
+
+        // Set the visual recognition image to the chosen image
+        visualRecognitionImage.image = image
+        // Dismiss the view controller
+        self.dismiss(animated: true, completion: nil)
+        // Create a document URL to save the file into
+        let documentsURL = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!
+        // Save the image as a JPEG
+        let imageToSave: Data = UIImageJPEGRepresentation(image, 1.0)!
+        // Append file name to document location
+        let fileURL = documentsURL.appendingPathComponent("tempImage.png")
+        // Save the image in the provided location
+        try? imageToSave.write(to: fileURL, options: [])
+        // Clear the tagItems array
+        tagItems = []
+        // Show the spinner while Watson is analyzing photo
+        SwiftSpinner.show("Watson is Analyzing Photo")
+        // Call the classifyImage function with the saved image
+        classifyImage(fileURL)
+        // Call the detectFaces function with the saved image
+        detectFaces(fileURL)
+    }
 }
+
+
