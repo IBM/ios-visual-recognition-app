@@ -50,7 +50,7 @@ A `Podfile` is included in the root of this repository. To download and install 
 $ pod install
 ```
 
-Now open the Xcode workspace, `{APP_Name}.xcworkspace`. From now on, open the `.xcworkspace` file becuase it contains all the dependencies and configurations.
+Now open the Xcode workspace, `{APP_Name}.xcworkspace`. From now on, open the `.xcworkspace` file because it contains all the dependencies and configurations.
 
 If you run into any issues during the pod install, it is recommended to run a pod update by using the following commands:
 
