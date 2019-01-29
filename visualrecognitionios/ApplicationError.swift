@@ -23,8 +23,10 @@ enum ApplicationError: Error, CustomStringConvertible {
     case invalidCredentials
 
     case photoLibraryUnavailable
-    
+
     case cameraUnavailable
+
+    case noData
 
     case error(String)
 
@@ -34,6 +36,7 @@ enum ApplicationError: Error, CustomStringConvertible {
         case .invalidCredentials: return "Invalid Visual Recognition Credentials"
         case .photoLibraryUnavailable: return "Photo Library Unavailable"
         case .cameraUnavailable: return "Camera Unavailable"
+        case .noData: return "Bad Response"
         case .error: return "Visual Recognition Failed"
         }
     }
@@ -44,6 +47,7 @@ enum ApplicationError: Error, CustomStringConvertible {
         case .invalidCredentials: return "Please check the readme to ensure proper credentials configuration."
         case .photoLibraryUnavailable: return "The Photo Library feature is currently unavailable on this device. Please try again."
         case .cameraUnavailable: return "The camera feature is currently unavailable on this device. If you are running the application on a simulator, please use a physical device in order to utilize camera functionality."
+        case .noData: return "No Visual Recognition data was received."
         case .error(let msg): return msg
         }
     }
