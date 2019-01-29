@@ -17,7 +17,7 @@
 import UIKit
 import SwiftSpinner
 import KTCenterFlowLayout
-import VisualRecognitionV3
+import VisualRecognition
 import BMSCore
 
 
@@ -179,7 +179,7 @@ class ViewController: UIViewController, UICollectionViewDataSource, UINavigation
         } else if let apiKey = configuration["visualrecognitionApi_key"] as? String {
 
             // Create service sdks
-            self.visualRecognition = VisualRecognition(apiKey: apiKey, version: versionDate)
+            self.visualRecognition = VisualRecognition(version: versionDate, apiKey: apiKey)
 
         } else {
             showAlert(.missingCredentials)
@@ -197,7 +197,19 @@ class ViewController: UIViewController, UICollectionViewDataSource, UINavigation
         // String that will hold the result score percentage from Watson
         var resultScorePercentage: String!
         // Classify image using Visual Recognition
-        visualRecognition.classify(imagesFile: imageLocation, failure: failVisualRecognitionWithError) { classifiedImages in
+        visualRecognition.classify(imagesFile: imageLocation, acceptLanguage: "en") { response, error in
+            if let error = error {
+               self.failVisualRecognitionWithError(error)
+               return
+            }
+            guard let classifiedImages = response?.result else {
+
+                DispatchQueue.main.async {
+                    SwiftSpinner.hide()
+                    self.showAlert(.noData)
+                }
+                return
+            }
             // Loop through classified images
             for classifiedImage in classifiedImages.images {
                 // Loop through classifiers
@@ -207,7 +219,7 @@ class ViewController: UIViewController, UICollectionViewDataSource, UINavigation
                         // Set the result name, score and score percentage
                         resultName = classificationResult.className.uppercased()
                         resultScore = classificationResult.score
-                        resultScorePercentage = String(Int(round(classificationResult.score! * 100))) + "%"
+                        resultScorePercentage = String(Int(round(classificationResult.score * 100))) + "%"
                         // Create new tag item based on result name, score and score percentage
                         let newTagItem = TagItem(watsonResultName: resultName,
                                                  watsonResultScore: resultScore,
@@ -231,7 +243,16 @@ class ViewController: UIViewController, UICollectionViewDataSource, UINavigation
         // String that will hold the result score percentage from Watson
         var resultScorePercentage: String!
         // Detect faces using Visual Recognition
-        visualRecognition.detectFaces(imagesFile: imageLocation, failure: failFaceDetectionWithError) { detectedFaces in
+        visualRecognition.detectFaces(imagesFile: imageLocation) { response, error in
+            if let error = error {
+                self.failFaceDetectionWithError(error)
+                return
+            }
+
+            guard let detectedFaces = response?.result else {
+                self.showAlert(.noData)
+                return
+            }
             // Loop through detected faces
             for detectedFace in detectedFaces.images {
                 // Loop through the faces found in detectedFaces
@@ -239,11 +260,13 @@ class ViewController: UIViewController, UICollectionViewDataSource, UINavigation
                     // Set the result name, score and score percentage
                     // Handle optional min and max ages
                     guard let age = face.age,
-                        let ageScore = age.score,
-                        let gender = face.gender,
-                        let genderScore = gender.score else{
+                        let gender = face.gender else {
                         return
                     }
+
+                    let genderScore = gender.score
+                    let ageScore = age.score
+
                     if let minAge = age.min, let maxAge = age.max {
                         resultName = gender.gender + " (" + String(describing: minAge) + "-" + String(describing: maxAge) + ")"
                         resultScorePercentage = String(Int(round(genderScore * 100))) + "% (" + String(Int(round(ageScore * 100))) + "%)"
@@ -265,17 +288,6 @@ class ViewController: UIViewController, UICollectionViewDataSource, UINavigation
                     let newTagItem = TagItem(watsonResultName: resultName, watsonResultScore: resultScore, watsonResultScorePercentage: resultScorePercentage)
                     // Append the new tag item to the tag items array
                     self.tagItems.append(newTagItem)
-                    // If celebrity match is found add set the result name, score, and score percentage
-                    if face.identity != nil {
-                        resultName = face.identity?.name
-                        resultScore = face.identity?.score
-                        resultScorePercentage = String(Int(round(resultScore * 100))) + "% "
-                        let newTagItem = TagItem(watsonResultName: resultName,
-                                                 watsonResultScore: resultScore,
-                                                 watsonResultScorePercentage: resultScorePercentage)
-                        // Append the new tag item to the tag items array
-                        self.tagItems.append(newTagItem)
-                    }
                 }
             }
 
@@ -392,7 +404,7 @@ extension ViewController: UIImagePickerControllerDelegate {
     }
 
     // Method that handles the actions once an image is chosen from the image picker controller
-    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String: Any]) {
 
         // Retrieve image from dictionary
         guard let image = info[UIImagePickerControllerOriginalImage] as? UIImage else {

@@ -1,5 +1,5 @@
 # Uncomment this line to define a global platform for your project
-platform :ios, '9.0'
+platform :ios, '10.0'
 
 target 'visualrecognitionios' do
     pod 'BMSCore', '~> 2.0'
@@ -8,6 +8,7 @@ target 'visualrecognitionios' do
     use_frameworks!
     pod "SwiftSpinner", '~> 1.5.0'
     pod 'KTCenterFlowLayout', '~> 1.3.1'
+    pod 'IBMWatsonVisualRecognitionV3', '~> 1.3.1'
 
     # Pods for visualrecognitionios
 
