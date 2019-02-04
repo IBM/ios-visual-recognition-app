@@ -420,7 +420,7 @@ extension ViewController: UIImagePickerControllerDelegate {
         // Create a document URL to save the file into
         let documentsURL = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!
         // Save the image as a JPEG
-        image.jpegData(compressionQuality: 1.0)!
+        let imageToSave: Data = image.jpegData(compressionQuality: 1.0)!
         // Append file name to document location
         let fileURL = documentsURL.appendingPathComponent("tempImage.png")
         // Save the image in the provided location
