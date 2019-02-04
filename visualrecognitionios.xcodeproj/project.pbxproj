@@ -7,26 +7,18 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		24F86F7DEE46486098397CB7 /* .gitignore in Sources */ = {isa = PBXBuildFile; fileRef = F8A1951E6B954550B8EAEFD3 /* .gitignore */; };
-		116538CBB0E944BD90BA5245 /* LICENSE in Sources */ = {isa = PBXBuildFile; fileRef = 4243FF90F37A436B844BB8FF /* LICENSE */; };
-		0761F04E484743FFBF935F37 /* BMSCredentials.plist in Resources */ = {isa = PBXBuildFile; fileRef = B668814195CE4576B51A86C2 /* BMSCredentials.plist */; };
-    		0D569EA7878142C09A684EFB /* LICENSE in Sources */ = {isa = PBXBuildFile; fileRef = 55DA802163934C6C8B4CDB28 /* LICENSE */; };
-    		3B50B7B1755D497E8CCD0265 /* .gitignore in Sources */ = {isa = PBXBuildFile; fileRef = 90286287EB6441FC89F6C5AB /* .gitignore */; };
-    		88A035F7AA91499D8B2CBD4C /* BMSCredentials.plist in Resources */ = {isa = PBXBuildFile; fileRef = C59946AB9080437CB6B71242 /* BMSCredentials.plist */; };
-    		0CE2715E21EFDC5B003A97B7 /* RestKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0CE2715D21EFDC5A003A97B7 /* RestKit.framework */; };
-        	0CE2715F21EFDC5B003A97B7 /* RestKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 0CE2715D21EFDC5A003A97B7 /* RestKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		465278C081E847F3BE2CAC8A /* LICENSE in Sources */ = {isa = PBXBuildFile; fileRef = 8B0455B4F74644C0A01B629D /* LICENSE */; };
+		737CFF0531F34829A25A90D3 /* .gitignore in Sources */ = {isa = PBXBuildFile; fileRef = 1E54DEA4612942CDB1C15248 /* .gitignore */; };
+		29440B88389C4962A2036D24 /* BMSCredentials.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2BA5D0CFB84D43B4A8000E3B /* BMSCredentials.plist */; };
 		4931471C1D9D72C600D044FE /* TagItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4931471B1D9D72C600D044FE /* TagItem.swift */; };
 		497C3A901D9C27E900A2C33E /* TagCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 497C3A8E1D9C27E900A2C33E /* TagCollectionViewCell.swift */; };
 		497C3A911D9C27E900A2C33E /* TagCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 497C3A8F1D9C27E900A2C33E /* TagCollectionViewCell.xib */; };
-		49E15BB91D9068FC005C4B9E /* VisualRecognitionV3.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 49E15BB71D9068ED005C4B9E /* VisualRecognitionV3.framework */; };
-		49E15BBA1D9068FC005C4B9E /* VisualRecognitionV3.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 49E15BB71D9068ED005C4B9E /* VisualRecognitionV3.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		4E9DF87A2D06FD16104E6D81 /* Pods_visualrecognitioniosUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18FB6B94BD7F5CF6B965945C /* Pods_visualrecognitioniosUITests.framework */; };
 		555C91AC1D0F0731003E84E3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 555C91AB1D0F0731003E84E3 /* AppDelegate.swift */; };
 		555C91AE1D0F0731003E84E3 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 555C91AD1D0F0731003E84E3 /* ViewController.swift */; };
 		555C91B11D0F0731003E84E3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 555C91AF1D0F0731003E84E3 /* Main.storyboard */; };
 		555C91B31D0F0731003E84E3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 555C91B21D0F0731003E84E3 /* Assets.xcassets */; };
 		5AD2174C7FEFAB5CF81BC563 /* Pods_visualrecognitioniosTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E544B14066F29C9013C2DBC8 /* Pods_visualrecognitioniosTests.framework */; };
-		88A035F7AA91499D8B2CBD4C /* BMSCredentials.plist in Resources */ = {isa = PBXBuildFile; fileRef = C59946AB9080437CB6B71242 /* BMSCredentials.plist */; };
 		9D056528766C3DA17608E6CD /* Pods_visualrecognitionios.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C588E03443573F2DDF2BE953 /* Pods_visualrecognitionios.framework */; };
 		E3D187DA202CAFBE00E41D1D /* visualrecognitioniosTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3D187D9202CAFBE00E41D1D /* visualrecognitioniosTests.swift */; };
 		E3D187E8202CAFE500E41D1D /* visualrecognitioniosUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3D187E7202CAFE500E41D1D /* visualrecognitioniosUITests.swift */; };
@@ -57,8 +49,6 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				49E15BBA1D9068FC005C4B9E /* VisualRecognitionV3.framework in Embed Frameworks */,
-				0CE2715F21EFDC5B003A97B7 /* RestKit.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -66,13 +56,9 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		F8A1951E6B954550B8EAEFD3 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = .gitignore; path = .gitignore; sourceTree = "<group>"; };
-		4243FF90F37A436B844BB8FF /* LICENSE */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = LICENSE; path = LICENSE; sourceTree = "<group>"; };
-		B668814195CE4576B51A86C2 /* BMSCredentials.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = BMSCredentials.plist; path = BMSCredentials.plist; sourceTree = "<group>"; };
-        	55DA802163934C6C8B4CDB28 /* LICENSE */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = LICENSE; path = LICENSE; sourceTree = "<group>"; };
-        	90286287EB6441FC89F6C5AB /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = .gitignore; path = .gitignore; sourceTree = "<group>"; };
-        	C59946AB9080437CB6B71242 /* BMSCredentials.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = BMSCredentials.plist; path = BMSCredentials.plist; sourceTree = "<group>"; };
-        	0CE2715D21EFDC5A003A97B7 /* RestKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RestKit.framework; path = Carthage/Build/iOS/RestKit.framework; sourceTree = "<group>"; };
+		8B0455B4F74644C0A01B629D /* LICENSE */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = LICENSE; path = LICENSE; sourceTree = "<group>"; };
+		1E54DEA4612942CDB1C15248 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = .gitignore; path = .gitignore; sourceTree = "<group>"; };
+		2BA5D0CFB84D43B4A8000E3B /* BMSCredentials.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = BMSCredentials.plist; path = BMSCredentials.plist; sourceTree = "<group>"; };
 		11E82E2A01DF386A2BD70BE6 /* Pods-visualrecognitionios.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-visualrecognitionios.debug.xcconfig"; path = "Pods/Target Support Files/Pods-visualrecognitionios/Pods-visualrecognitionios.debug.xcconfig"; sourceTree = "<group>"; };
 		18FB6B94BD7F5CF6B965945C /* Pods_visualrecognitioniosUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_visualrecognitioniosUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1CCAB15229E227CD9B62C913 /* Pods-visualrecognitionios.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-visualrecognitionios.release.xcconfig"; path = "Pods/Target Support Files/Pods-visualrecognitionios/Pods-visualrecognitionios.release.xcconfig"; sourceTree = "<group>"; };
@@ -80,14 +66,12 @@
 		4931471B1D9D72C600D044FE /* TagItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TagItem.swift; sourceTree = "<group>"; };
 		497C3A8E1D9C27E900A2C33E /* TagCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TagCollectionViewCell.swift; sourceTree = "<group>"; };
 		497C3A8F1D9C27E900A2C33E /* TagCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TagCollectionViewCell.xib; sourceTree = "<group>"; };
-		49E15BB71D9068ED005C4B9E /* VisualRecognitionV3.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = VisualRecognitionV3.framework; path = Carthage/Build/iOS/VisualRecognitionV3.framework; sourceTree = "<group>"; };
 		555C91A81D0F0731003E84E3 /* visualrecognitionios.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = visualrecognitionios.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		555C91AB1D0F0731003E84E3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		555C91AD1D0F0731003E84E3 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		555C91B01D0F0731003E84E3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		555C91B21D0F0731003E84E3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		555C91B71D0F0731003E84E3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-				940523B57AFE49E9A12CDCEA /* BMSCredentials.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = BMSCredentials.plist; sourceTree = "<group>"; };
 		87BF2132F67C2EAE62E4B71D /* Pods-visualrecognitioniosUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-visualrecognitioniosUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-visualrecognitioniosUITests/Pods-visualrecognitioniosUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		BE8DF661C07204DB0E9EEB5F /* Pods-visualrecognitioniosTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-visualrecognitioniosTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-visualrecognitioniosTests/Pods-visualrecognitioniosTests.release.xcconfig"; sourceTree = "<group>"; };
 		C588E03443573F2DDF2BE953 /* Pods_visualrecognitionios.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_visualrecognitionios.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -107,9 +91,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				49E15BB91D9068FC005C4B9E /* VisualRecognitionV3.framework in Frameworks */,
 				9D056528766C3DA17608E6CD /* Pods_visualrecognitionios.framework in Frameworks */,
-				0CE2715E21EFDC5B003A97B7 /* RestKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -118,7 +100,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				5AD2174C7FEFAB5CF81BC563 /* Pods_visualrecognitioniosTests.framework in Frameworks */,
-				0CE2715E21EFDC5B003A97B7 /* RestKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -127,7 +108,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				4E9DF87A2D06FD16104E6D81 /* Pods_visualrecognitioniosUITests.framework in Frameworks */,
-				0CE2715E21EFDC5B003A97B7 /* RestKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -137,7 +117,6 @@
 		545C9DD4D3D79A706E9BC9CE /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				49E15BB71D9068ED005C4B9E /* VisualRecognitionV3.framework */,
 				C588E03443573F2DDF2BE953 /* Pods_visualrecognitionios.framework */,
 				E544B14066F29C9013C2DBC8 /* Pods_visualrecognitioniosTests.framework */,
 				18FB6B94BD7F5CF6B965945C /* Pods_visualrecognitioniosUITests.framework */,
@@ -148,7 +127,6 @@
 		555C919F1D0F0731003E84E3 = {
 			isa = PBXGroup;
 			children = (
-			    0CE2715D21EFDC5A003A97B7 /* RestKit.framework */,
 				555C91AA1D0F0731003E84E3 /* visualrecognitionios */,
 				E3D187D8202CAFBE00E41D1D /* visualrecognitioniosTests */,
 				E3D187E6202CAFE500E41D1D /* visualrecognitioniosUITests */,
@@ -171,8 +149,7 @@
 		555C91AA1D0F0731003E84E3 /* visualrecognitionios */ = {
 			isa = PBXGroup;
 			children = (
-				B668814195CE4576B51A86C2 /* BMSCredentials.plist */,
-			    	C59946AB9080437CB6B71242 /* BMSCredentials.plist */,
+				2BA5D0CFB84D43B4A8000E3B /* BMSCredentials.plist */,
 				E3F7DD47202BF58D00F857C3 /* ApplicationError.swift */,
 				555C91AB1D0F0731003E84E3 /* AppDelegate.swift */,
 				555C91AD1D0F0731003E84E3 /* ViewController.swift */,
@@ -229,7 +206,6 @@
 				555C91A51D0F0731003E84E3 /* Frameworks */,
 				555C91A61D0F0731003E84E3 /* Resources */,
 				7A8D7333F6565346A25DF969 /* [CP] Embed Pods Frameworks */,
-				410ABB49FD048590F6C8D98F /* [CP] Copy Pods Resources */,
 				49E15BA51D902274005C4B9E /* Embed Frameworks */,
 			);
 			buildRules = (
@@ -249,8 +225,6 @@
 				E3D187D3202CAFBE00E41D1D /* Sources */,
 				E3D187D4202CAFBE00E41D1D /* Frameworks */,
 				E3D187D5202CAFBE00E41D1D /* Resources */,
-				93E07638EFF04722C4BCF890 /* [CP] Embed Pods Frameworks */,
-				F063F379DB344B4F4FE31CB3 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -270,8 +244,6 @@
 				E3D187E1202CAFE500E41D1D /* Sources */,
 				E3D187E2202CAFE500E41D1D /* Frameworks */,
 				E3D187E3202CAFE500E41D1D /* Resources */,
-				28E31251557338025394B2AE /* [CP] Embed Pods Frameworks */,
-				E5D3DA377F0FD7565341A0D2 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -290,20 +262,22 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0920;
-				LastUpgradeCheck = 0920;
+				LastUpgradeCheck = 1010;
 				ORGANIZATIONNAME = IBM;
 				TargetAttributes = {
 					555C91A71D0F0731003E84E3 = {
 						CreatedOnToolsVersion = 7.3.1;
-						LastSwiftMigration = 0800;
+						LastSwiftMigration = 1010;
 					};
 					E3D187D6202CAFBE00E41D1D = {
 						CreatedOnToolsVersion = 9.2;
+						LastSwiftMigration = 1010;
 						ProvisioningStyle = Automatic;
 						TestTargetID = 555C91A71D0F0731003E84E3;
 					};
 					E3D187E4202CAFE500E41D1D = {
 						CreatedOnToolsVersion = 9.2;
+						LastSwiftMigration = 1010;
 						ProvisioningStyle = Automatic;
 						TestTargetID = 555C91A71D0F0731003E84E3;
 					};
@@ -334,8 +308,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0761F04E484743FFBF935F37 /* BMSCredentials.plist in Resources */,
-			    	88A035F7AA91499D8B2CBD4C /* BMSCredentials.plist in Resources */,
+				29440B88389C4962A2036D24 /* BMSCredentials.plist in Resources */,
 				497C3A911D9C27E900A2C33E /* TagCollectionViewCell.xib in Resources */,
 				555C91B31D0F0731003E84E3 /* Assets.xcassets in Resources */,
 				555C91B11D0F0731003E84E3 /* Main.storyboard in Resources */,
@@ -377,36 +350,6 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		28E31251557338025394B2AE /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-visualrecognitioniosUITests/Pods-visualrecognitioniosUITests-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		410ABB49FD048590F6C8D98F /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-visualrecognitionios/Pods-visualrecognitionios-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		7A8D7333F6565346A25DF969 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -414,32 +357,25 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-visualrecognitionios/Pods-visualrecognitionios-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/BMSAnalyticsAPI/BMSAnalyticsAPI.framework",
+				"${BUILT_PRODUCTS_DIR}/BMSCore/BMSCore.framework",
+				"${BUILT_PRODUCTS_DIR}/IBMWatsonRestKit/RestKit.framework",
+				"${BUILT_PRODUCTS_DIR}/IBMWatsonVisualRecognitionV3/VisualRecognition.framework",
 				"${BUILT_PRODUCTS_DIR}/KTCenterFlowLayout/KTCenterFlowLayout.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftSpinner/SwiftSpinner.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/BMSAnalyticsAPI.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/BMSCore.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RestKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/VisualRecognition.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/KTCenterFlowLayout.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftSpinner.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-visualrecognitionios/Pods-visualrecognitionios-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		93E07638EFF04722C4BCF890 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-visualrecognitioniosTests/Pods-visualrecognitioniosTests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		E48551C04942F6AAA79A91F5 /* [CP] Check Pods Manifest.lock */ = {
@@ -476,36 +412,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		E5D3DA377F0FD7565341A0D2 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-visualrecognitioniosUITests/Pods-visualrecognitioniosUITests-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		F063F379DB344B4F4FE31CB3 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-visualrecognitioniosTests/Pods-visualrecognitioniosTests-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -579,12 +485,14 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
@@ -634,12 +542,14 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
@@ -674,20 +584,17 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 11E82E2A01DF386A2BD70BE6 /* Pods-visualrecognitionios.debug.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(PROJECT_DIR)/Carthage/Build/iOS",
 					"$(PROJECT_DIR)",
 				);
-				"FRAMEWORK_SEARCH_PATHS[arch=*]" = "$(inherited) $(PROJECT_DIR)/Carthage/Build/iOS $(PROJECT_DIR)";
 				INFOPLIST_FILE = visualrecognitionios/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.ibm.visualrecognitionios;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 			};
 			name = Debug;
 		};
@@ -695,20 +602,17 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 1CCAB15229E227CD9B62C913 /* Pods-visualrecognitionios.release.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(PROJECT_DIR)/Carthage/Build/iOS",
 					"$(PROJECT_DIR)",
 				);
-				"FRAMEWORK_SEARCH_PATHS[arch=*]" = "$(inherited) $(PROJECT_DIR)/Carthage/Build/iOS $(PROJECT_DIR)";
 				INFOPLIST_FILE = visualrecognitionios/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.ibm.visualrecognitionios;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 			};
 			name = Release;
 		};
@@ -730,7 +634,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.ibm.BluePic-iOS.visualrecognitioniosTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/visualrecognitionios.app/visualrecognitionios";
 			};
@@ -753,7 +657,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.ibm.BluePic-iOS.visualrecognitioniosTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/visualrecognitionios.app/visualrecognitionios";
 			};
@@ -776,7 +680,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.ibm.BluePic-iOS.visualrecognitioniosUITests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_TARGET_NAME = visualrecognitionios;
 			};
@@ -798,7 +702,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.ibm.BluePic-iOS.visualrecognitioniosUITests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_TARGET_NAME = visualrecognitionios;
 			};
