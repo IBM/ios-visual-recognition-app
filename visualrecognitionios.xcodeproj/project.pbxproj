@@ -7,9 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		7BE188C3A3B541338513C493 /* LICENSE in Sources */ = {isa = PBXBuildFile; fileRef = 73D716F907FE49B695537B8F /* LICENSE */; };
-		A5E533C0E37B434C9D2FB812 /* .gitignore in Sources */ = {isa = PBXBuildFile; fileRef = 18A795661E1F4B63915D92AD /* .gitignore */; };
-		1C049804B2814AC9BF9EA503 /* BMSCredentials.plist in Resources */ = {isa = PBXBuildFile; fileRef = 08C93EB526144813BC2A1277 /* BMSCredentials.plist */; };
+		551EBF9DDF82418CBADFE3FA /* LICENSE in Sources */ = {isa = PBXBuildFile; fileRef = 6CAD3C85743646808302CDF1 /* LICENSE */; };
+		2EE6C67928B94D69BAF13F10 /* .gitignore in Sources */ = {isa = PBXBuildFile; fileRef = 3994FE09DB7644AEA9B8953B /* .gitignore */; };
+		9FB3B829457145559F0BBAF3 /* BMSCredentials.plist in Resources */ = {isa = PBXBuildFile; fileRef = E11A0A2188514DA7ACCF4E69 /* BMSCredentials.plist */; };
 		4931471C1D9D72C600D044FE /* TagItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4931471B1D9D72C600D044FE /* TagItem.swift */; };
 		497C3A901D9C27E900A2C33E /* TagCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 497C3A8E1D9C27E900A2C33E /* TagCollectionViewCell.swift */; };
 		497C3A911D9C27E900A2C33E /* TagCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 497C3A8F1D9C27E900A2C33E /* TagCollectionViewCell.xib */; };
@@ -56,9 +56,9 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		73D716F907FE49B695537B8F /* LICENSE */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = LICENSE; path = LICENSE; sourceTree = "<group>"; };
-		18A795661E1F4B63915D92AD /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = .gitignore; path = .gitignore; sourceTree = "<group>"; };
-		08C93EB526144813BC2A1277 /* BMSCredentials.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = BMSCredentials.plist; path = BMSCredentials.plist; sourceTree = "<group>"; };
+		6CAD3C85743646808302CDF1 /* LICENSE */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = LICENSE; path = LICENSE; sourceTree = "<group>"; };
+		3994FE09DB7644AEA9B8953B /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = .gitignore; path = .gitignore; sourceTree = "<group>"; };
+		E11A0A2188514DA7ACCF4E69 /* BMSCredentials.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = BMSCredentials.plist; path = BMSCredentials.plist; sourceTree = "<group>"; };
 		11E82E2A01DF386A2BD70BE6 /* Pods-visualrecognitionios.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-visualrecognitionios.debug.xcconfig"; path = "Pods/Target Support Files/Pods-visualrecognitionios/Pods-visualrecognitionios.debug.xcconfig"; sourceTree = "<group>"; };
 		18FB6B94BD7F5CF6B965945C /* Pods_visualrecognitioniosUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_visualrecognitioniosUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1CCAB15229E227CD9B62C913 /* Pods-visualrecognitionios.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-visualrecognitionios.release.xcconfig"; path = "Pods/Target Support Files/Pods-visualrecognitionios/Pods-visualrecognitionios.release.xcconfig"; sourceTree = "<group>"; };
@@ -149,7 +149,7 @@
 		555C91AA1D0F0731003E84E3 /* visualrecognitionios */ = {
 			isa = PBXGroup;
 			children = (
-				08C93EB526144813BC2A1277 /* BMSCredentials.plist */,
+				E11A0A2188514DA7ACCF4E69 /* BMSCredentials.plist */,
 				E3F7DD47202BF58D00F857C3 /* ApplicationError.swift */,
 				555C91AB1D0F0731003E84E3 /* AppDelegate.swift */,
 				555C91AD1D0F0731003E84E3 /* ViewController.swift */,
@@ -308,7 +308,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1C049804B2814AC9BF9EA503 /* BMSCredentials.plist in Resources */,
+				9FB3B829457145559F0BBAF3 /* BMSCredentials.plist in Resources */,
 				497C3A911D9C27E900A2C33E /* TagCollectionViewCell.xib in Resources */,
 				555C91B31D0F0731003E84E3 /* Assets.xcassets in Resources */,
 				555C91B11D0F0731003E84E3 /* Main.storyboard in Resources */,
