@@ -26,6 +26,7 @@ import BMSCore
 
 
 
+
 class ViewController: UIViewController, UICollectionViewDataSource, UINavigationControllerDelegate {
 
     // UIToolbar item for camera selector
@@ -65,7 +66,7 @@ class ViewController: UIViewController, UICollectionViewDataSource, UINavigation
 
         NotificationCenter.default.addObserver(self,
                                                selector: #selector(didBecomeActive),
-                                               name: .UIApplicationDidBecomeActive,
+                                               name: UIApplication.didBecomeActiveNotification,
                                                object: nil)
 
         
@@ -112,12 +113,12 @@ class ViewController: UIViewController, UICollectionViewDataSource, UINavigation
     // Button action that opens the photo library to choose a photo
     @IBAction func openPhotoLibrary(_ sender: AnyObject) {
         // Check if photo library source is available
-        if UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.photoLibrary) {
+        if UIImagePickerController.isSourceTypeAvailable(UIImagePickerController.SourceType.photoLibrary) {
             // Create image picker using image picker controller
             let imagePicker = UIImagePickerController()
             imagePicker.delegate = self
             // Assign image picker source to the photo library
-            imagePicker.sourceType = UIImagePickerControllerSourceType.photoLibrary
+            imagePicker.sourceType = UIImagePickerController.SourceType.photoLibrary
             // Assign the image picker allowsEditing field false
             imagePicker.allowsEditing = true
             // Present the view controller
@@ -404,10 +405,11 @@ extension ViewController: UIImagePickerControllerDelegate {
     }
 
     // Method that handles the actions once an image is chosen from the image picker controller
-    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String: Any]) {
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey: Any]) {
+        let info = convertFromUIImagePickerControllerInfoKeyDictionary(info)
 
         // Retrieve image from dictionary
-        guard let image = info[UIImagePickerControllerOriginalImage] as? UIImage else {
+        guard let image = info[convertFromUIImagePickerControllerInfoKey(UIImagePickerController.InfoKey.originalImage)] as? UIImage else {
             return
         }
 
@@ -418,7 +420,7 @@ extension ViewController: UIImagePickerControllerDelegate {
         // Create a document URL to save the file into
         let documentsURL = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!
         // Save the image as a JPEG
-        let imageToSave: Data = UIImageJPEGRepresentation(image, 1.0)!
+        let imageToSave: Data = image.jpegData(compressionQuality: 1.0)!
         // Append file name to document location
         let fileURL = documentsURL.appendingPathComponent("tempImage.png")
         // Save the image in the provided location
@@ -435,3 +437,14 @@ extension ViewController: UIImagePickerControllerDelegate {
 }
 
 
+
+
+// Helper function inserted by Swift 4.2 migrator.
+fileprivate func convertFromUIImagePickerControllerInfoKeyDictionary(_ input: [UIImagePickerController.InfoKey: Any]) -> [String: Any] {
+	return Dictionary(uniqueKeysWithValues: input.map {key, value in (key.rawValue, value)})
+}
+
+// Helper function inserted by Swift 4.2 migrator.
+fileprivate func convertFromUIImagePickerControllerInfoKey(_ input: UIImagePickerController.InfoKey) -> String {
+	return input.rawValue
+}
