@@ -96,14 +96,12 @@ When the service has been created, navigate to the **Service credentials** tab, 
 
 You can now run the application on a simulator or physical device:
 
-![WatsonVisualRecognitionMain](README_Images/WatsonVisualRecognitionMain.png)
-![WatsonVisualRecognitionPhotoSelection](README_Images/WatsonVisualRecognitionPhotoSelection.png)
-![WatsonVisualRecognitionPhotoSize](README_Images/WatsonVisualRecognitionPhotoSize.png)
-![WatsonVisualRecognitionAnalyzing](README_Images/WatsonVisualRecognitionAnalyzing.png)
-![WatsonVisualRecognitionFinished](README_Images/WatsonVisualRecognitionFinished.png)
-![WatsonVisualRecognitionTagsPercentage](README_Images/WatsonVisualRecognitionTagsPercentage.png)
+|   |   |   |
+| - | - | - |
+| ![WatsonVisualRecognitionMain](README_Images/WatsonVisualRecognitionMain.png) | ![WatsonVisualRecognitionPhotoSelection](README_Images/WatsonVisualRecognitionPhotoSelection.png) | ![WatsonVisualRecognitionPhotoSize](README_Images/WatsonVisualRecognitionPhotoSize.png) |
+| ![WatsonVisualRecognitionAnalyzing](README_Images/WatsonVisualRecognitionAnalyzing.png) | ![WatsonVisualRecognitionFinished](README_Images/WatsonVisualRecognitionFinished.png) | ![WatsonVisualRecognitionTagsPercentage](README_Images/WatsonVisualRecognitionTagsPercentage.png) |
 
-The application allows you to do Visual Recognition for images from your Photo Library or from an image you take using a physical device's camera. Take a photo using your device's camera or choose a photo from your library using the toolbar buttons on the bottom of the application. Once an image is chosen, the Watson Visual Recognition service will analyze the photo and create tags for the photo. You can click the tags to see a percentage value which shows how confident Watson is. For an image with a face present, Watson will attempt to show a gender and age value as well as a celebrity match if one is provided.
+The application allows you to do Visual Recognition for images from your Photo Library or from an image you take using a physical device's camera. Take a photo using your device's camera or choose a photo from your library using the toolbar buttons on the bottom of the application. Once an image is chosen, the Watson Visual Recognition service will analyze the photo and create tags for the photo. You can click the tags to see a percentage value which shows how confident Watson is.
 
 ## License
 
