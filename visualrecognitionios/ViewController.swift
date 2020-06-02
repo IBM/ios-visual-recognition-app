@@ -192,7 +192,7 @@ class ViewController: UIViewController, UICollectionViewDataSource, UINavigation
     }
 
     // Function to classify image using Visual Recognition based on image location
-    func classifyImage(_ imageLocation: URL) {
+    func classifyImage(_ image: Data) {
         // String that will hold the result name from Watson
         var resultName: String!
         // Double that will hold the result scored from Watson
@@ -200,7 +200,7 @@ class ViewController: UIViewController, UICollectionViewDataSource, UINavigation
         // String that will hold the result score percentage from Watson
         var resultScorePercentage: String!
         // Classify image using Visual Recognition
-        visualRecognition.classify(url: imageLocation.absoluteString, acceptLanguage: "en") { response, error in
+        visualRecognition.classify(imagesFile: image, acceptLanguage: "en") { response, error in
             if let error = error {
                self.failVisualRecognitionWithError(error)
                return
@@ -371,7 +371,7 @@ extension ViewController: UIImagePickerControllerDelegate {
         // Show the spinner while Watson is analyzing photo
         SwiftSpinner.show("Watson is Analyzing Photo")
         // Call the classifyImage function with the saved image
-        classifyImage(fileURL)
+        classifyImage(imageToSave)
     }
 }
 
