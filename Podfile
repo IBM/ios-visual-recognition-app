@@ -6,7 +6,7 @@ target 'visualrecognitionios' do
 
     # Comment this line if you're not using Swift and don't want to use dynamic frameworks
     use_frameworks!
-    pod "SwiftSpinner", '~> 1.6.0'
+    pod "SwiftSpinner", '~> 2.1.0'
     pod 'KTCenterFlowLayout', '~> 1.3.1'
     pod 'IBMWatsonVisualRecognitionV3', '~> 1.3.1'
 
