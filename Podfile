@@ -8,7 +8,7 @@ target 'visualrecognitionios' do
     use_frameworks!
     pod "SwiftSpinner", '~> 2.1.0'
     pod 'KTCenterFlowLayout', '~> 1.3.1'
-    pod 'IBMWatsonVisualRecognitionV3', '~> 1.3.1'
+    pod 'IBMWatsonVisualRecognitionV3', '~> 3.4.0'
 
     # Pods for visualrecognitionios
 
