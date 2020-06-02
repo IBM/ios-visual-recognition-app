@@ -3,7 +3,7 @@
 //  visualrecognitioniosUITests
 //
 //  Created by Aaron Liberatore on 2/8/18.
-//  Copyright © 2018 IBM. All rights reserved.
+//  Copyright © 2018, 2020 IBM. All rights reserved.
 //
 
 import XCTest
