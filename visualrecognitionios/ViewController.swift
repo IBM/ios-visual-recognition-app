@@ -247,12 +247,6 @@ class ViewController: UIViewController, UICollectionViewDataSource, UINavigation
         }
     }
 
-    // Method to handle face recognition error
-    func failFaceDetectionWithError(_ error: Error) {
-        // Print the error to the console
-        print("Face Detection Error:", error)
-    }
-
     // Method to handle Visual Recognition Error
     func failVisualRecognitionWithError(_ error: Error) {
         // Print the error to the console
