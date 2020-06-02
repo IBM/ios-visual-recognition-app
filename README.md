@@ -14,7 +14,7 @@ When you have completed this code pattern, you will understand how to:
 
 ## Steps
 
-> As an alternative to steps 1 & 2 below, you can [create this project as a starter kit](https://cloud.ibm.com/developer/mobile/create-app?defaultDeploymentToolchain=&defaultLanguage=IOS_SWIFT&env_id=ibm%3Ayp%3Aus-south&starterKit=22179578-addd-392f-bbf8-b1b128dd9cb8&tenantNavMode=true) on IBM Cloud, which automatically provisions required services, and injects service credentials into a custom fork of this pattern. Then, you can skip directly to step 3 below.
+> As an alternative to steps 1 & 2 below, you can [create this project as a starter kit](https://cloud.ibm.com/developer/appledevelopment/create-app?starterKit=e5d2c3f8-9066-3473-adfb-287f6501c6d2) on IBM Cloud, which automatically provisions required services, and injects service credentials into a custom fork of this pattern. Then, you can skip directly to step 3 below.
 
 1. [Install development dependencies](#1-install-development-dependencies)
 1. [Configure service credentials](#2-configure-service-credentials)
@@ -24,11 +24,11 @@ When you have completed this code pattern, you will understand how to:
 
 Ensure you have the correct [development tools](https://developer.apple.com/) installed to work with:
 
-* iOS 8.0+
-* Xcode 10
-* Swift 3.0+
+* iOS 10.0+
+* Xcode 11
+* Swift 5.0+
 
-Next, the IBM Cloud Mobile services SDK uses [CocoaPods](https://cocoapods.org/) to manage and configure dependencies. To use our latest SDKs you need version _1.1.0.rc.2_.
+Next, the IBM Cloud Mobile services SDK uses [CocoaPods](https://cocoapods.org/) to manage and configure dependencies. To use our latest SDKs you need version _1.1.0.rc.2_ or greater.
 
 You can install CocoaPods using the following command:
 
