@@ -174,13 +174,15 @@ class ViewController: UIViewController, UICollectionViewDataSource, UINavigation
         if let apiKey = configuration["visualrecognitionApikey"] as? String {
 
             // Create service sdks
-            self.visualRecognition = VisualRecognition(version: versionDate, apiKey: apiKey)
+            let authenticator = WatsonIAMAuthenticator(apiKey: apiKey)
+            self.visualRecognition = VisualRecognition(version: versionDate, authenticator: authenticator)
 
         // If using user/pwd authentication
         } else if let apiKey = configuration["visualrecognitionApi_key"] as? String {
 
             // Create service sdks
-            self.visualRecognition = VisualRecognition(version: versionDate, apiKey: apiKey)
+            let authenticator = WatsonIAMAuthenticator(apiKey: apiKey)
+            self.visualRecognition = VisualRecognition(version: versionDate, authenticator: authenticator)
 
         } else {
             showAlert(.missingCredentials)
@@ -190,7 +192,7 @@ class ViewController: UIViewController, UICollectionViewDataSource, UINavigation
     }
 
     // Function to classify image using Visual Recognition based on image location
-    func classifyImage(_ imageLocation: URL) {
+    func classifyImage(_ image: Data) {
         // String that will hold the result name from Watson
         var resultName: String!
         // Double that will hold the result scored from Watson
@@ -198,7 +200,7 @@ class ViewController: UIViewController, UICollectionViewDataSource, UINavigation
         // String that will hold the result score percentage from Watson
         var resultScorePercentage: String!
         // Classify image using Visual Recognition
-        visualRecognition.classify(imagesFile: imageLocation, acceptLanguage: "en") { response, error in
+        visualRecognition.classify(imagesFile: image, acceptLanguage: "en") { response, error in
             if let error = error {
                self.failVisualRecognitionWithError(error)
                return
@@ -218,7 +220,7 @@ class ViewController: UIViewController, UICollectionViewDataSource, UINavigation
                     // Loop through classsification results
                     for classificationResult in classifier.classes {
                         // Set the result name, score and score percentage
-                        resultName = classificationResult.className.uppercased()
+                        resultName = classificationResult.class.uppercased()
                         resultScore = classificationResult.score
                         resultScorePercentage = String(Int(round(classificationResult.score * 100))) + "%"
                         // Create new tag item based on result name, score and score percentage
@@ -235,67 +237,6 @@ class ViewController: UIViewController, UICollectionViewDataSource, UINavigation
         }
     }
 
-    // Function to detect faces in image using Visual Recognition based on image location
-    func detectFaces(_ imageLocation: URL) {
-        // String that will hold the result name from Watson
-        var resultName: String!
-        // Double that will hold the result scored from Watson
-        var resultScore: Double!
-        // String that will hold the result score percentage from Watson
-        var resultScorePercentage: String!
-        // Detect faces using Visual Recognition
-        visualRecognition.detectFaces(imagesFile: imageLocation) { response, error in
-            if let error = error {
-                self.failFaceDetectionWithError(error)
-                return
-            }
-
-            guard let detectedFaces = response?.result else {
-                self.showAlert(.noData)
-                return
-            }
-            // Loop through detected faces
-            for detectedFace in detectedFaces.images {
-                // Loop through the faces found in detectedFaces
-                for face in detectedFace.faces {
-                    // Set the result name, score and score percentage
-                    // Handle optional min and max ages
-                    guard let age = face.age,
-                        let gender = face.gender else {
-                        return
-                    }
-
-                    let genderScore = gender.score
-                    let ageScore = age.score
-
-                    if let minAge = age.min, let maxAge = age.max {
-                        resultName = gender.gender + " (" + String(describing: minAge) + "-" + String(describing: maxAge) + ")"
-                        resultScorePercentage = String(Int(round(genderScore * 100))) + "% (" + String(Int(round(ageScore * 100))) + "%)"
-
-                    } else if let minAge = age.min {
-                       resultName = gender.gender + " (" + String(describing: minAge) + "-?)"
-                       resultScorePercentage = String(Int(round(genderScore * 100))) + "% (" + String(Int(round(ageScore * 100))) + "%)"
-
-                    } else if let maxAge = age.max {
-                        resultName = gender.gender + " (?-" + String(describing: maxAge) + ")"
-                        resultScorePercentage = String(Int(round(genderScore * 100))) + "% (" + String(Int(round(ageScore * 100))) + "%)"
-
-                    } else {
-                        resultName = gender.gender
-                        resultScorePercentage = String(Int(round(genderScore * 100)))
-                    }
-                    resultScore = genderScore
-                    // Create new tag item based on result name, score and score percentage
-                    let newTagItem = TagItem(watsonResultName: resultName, watsonResultScore: resultScore, watsonResultScorePercentage: resultScorePercentage)
-                    // Append the new tag item to the tag items array
-                    self.tagItems.append(newTagItem)
-                }
-            }
-
-            self.reloadCollectionViewTags()
-        }
-    }
-
     // Method to reload Collection View
     func reloadCollectionViewTags() {
         DispatchQueue.main.async {
@@ -304,12 +245,6 @@ class ViewController: UIViewController, UICollectionViewDataSource, UINavigation
             // Hide Spinner
             SwiftSpinner.hide()
         }
-    }
-
-    // Method to handle face recognition error
-    func failFaceDetectionWithError(_ error: Error) {
-        // Print the error to the console
-        print("Face Detection Error:", error)
     }
 
     // Method to handle Visual Recognition Error
@@ -430,9 +365,7 @@ extension ViewController: UIImagePickerControllerDelegate {
         // Show the spinner while Watson is analyzing photo
         SwiftSpinner.show("Watson is Analyzing Photo")
         // Call the classifyImage function with the saved image
-        classifyImage(fileURL)
-        // Call the detectFaces function with the saved image
-        detectFaces(fileURL)
+        classifyImage(imageToSave)
     }
 }
 
