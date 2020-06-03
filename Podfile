@@ -1,7 +1,7 @@
 # Uncomment this line to define a global platform for your project
 platform :ios, '10.0'
 
-target 'visualrecognitionios' do
+target 'iosvisualrecognitionapp' do
     pod 'BMSCore', '~> 2.6'
 
     # Comment this line if you're not using Swift and don't want to use dynamic frameworks
@@ -12,12 +12,12 @@ target 'visualrecognitionios' do
 
     # Pods for visualrecognitionios
 
-    target 'visualrecognitioniosTests' do
+    target 'iosvisualrecognitionappTests' do
         inherit! :search_paths
         # Pods for testing
     end
 
-    target 'visualrecognitioniosUITests' do
+    target 'iosvisualrecognitionappUITests' do
         inherit! :search_paths
         # Pods for testing
     end
