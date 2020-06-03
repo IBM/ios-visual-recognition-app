@@ -16,7 +16,7 @@
 
 import XCTest
 
-class visualrecognitioniosTests: XCTestCase {
+class iosvisualrecognitionappTests: XCTestCase {
 
     override func setUp() {
         super.setUp()

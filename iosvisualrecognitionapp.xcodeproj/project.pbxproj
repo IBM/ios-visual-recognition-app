@@ -18,8 +18,8 @@
 		55A5AAA848C0461796A743F4 /* BMSCredentials.plist in Resources */ = {isa = PBXBuildFile; fileRef = AADF5FF554684D5797BED935 /* BMSCredentials.plist */; };
 		5AD2174C7FEFAB5CF81BC563 /* Pods_visualrecognitioniosTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E544B14066F29C9013C2DBC8 /* Pods_visualrecognitioniosTests.framework */; };
 		9D056528766C3DA17608E6CD /* Pods_visualrecognitionios.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C588E03443573F2DDF2BE953 /* Pods_visualrecognitionios.framework */; };
-		E3D187DA202CAFBE00E41D1D /* visualrecognitioniosTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3D187D9202CAFBE00E41D1D /* visualrecognitioniosTests.swift */; };
-		E3D187E8202CAFE500E41D1D /* visualrecognitioniosUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3D187E7202CAFE500E41D1D /* visualrecognitioniosUITests.swift */; };
+		E3D187DA202CAFBE00E41D1D /* iosvisualrecognitionappTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3D187D9202CAFBE00E41D1D /* iosvisualrecognitionappTests.swift */; };
+		E3D187E8202CAFE500E41D1D /* iosvisualrecognitionappUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3D187E7202CAFE500E41D1D /* iosvisualrecognitionappUITests.swift */; };
 		E3F7DD48202BF58D00F857C3 /* ApplicationError.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3F7DD47202BF58D00F857C3 /* ApplicationError.swift */; };
 /* End PBXBuildFile section */
 
@@ -61,7 +61,7 @@
 		4931471B1D9D72C600D044FE /* TagItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TagItem.swift; sourceTree = "<group>"; };
 		497C3A8E1D9C27E900A2C33E /* TagCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TagCollectionViewCell.swift; sourceTree = "<group>"; };
 		497C3A8F1D9C27E900A2C33E /* TagCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TagCollectionViewCell.xib; sourceTree = "<group>"; };
-		555C91A81D0F0731003E84E3 /* visualrecognitionios.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = visualrecognitionios.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		555C91A81D0F0731003E84E3 /* iosvisualrecognitionapp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iosvisualrecognitionapp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		555C91AB1D0F0731003E84E3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		555C91AD1D0F0731003E84E3 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		555C91B01D0F0731003E84E3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -72,11 +72,11 @@
 		BE8DF661C07204DB0E9EEB5F /* Pods-visualrecognitioniosTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-visualrecognitioniosTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-visualrecognitioniosTests/Pods-visualrecognitioniosTests.release.xcconfig"; sourceTree = "<group>"; };
 		C588E03443573F2DDF2BE953 /* Pods_visualrecognitionios.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_visualrecognitionios.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D89BC7573A6BA92E7A355C67 /* Pods-visualrecognitioniosTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-visualrecognitioniosTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-visualrecognitioniosTests/Pods-visualrecognitioniosTests.debug.xcconfig"; sourceTree = "<group>"; };
-		E3D187D7202CAFBE00E41D1D /* visualrecognitioniosTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = visualrecognitioniosTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		E3D187D9202CAFBE00E41D1D /* visualrecognitioniosTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = visualrecognitioniosTests.swift; sourceTree = "<group>"; };
+		E3D187D7202CAFBE00E41D1D /* iosvisualrecognitionappTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = iosvisualrecognitionappTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		E3D187D9202CAFBE00E41D1D /* iosvisualrecognitionappTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iosvisualrecognitionappTests.swift; sourceTree = "<group>"; };
 		E3D187DB202CAFBE00E41D1D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		E3D187E5202CAFE500E41D1D /* visualrecognitioniosUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = visualrecognitioniosUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		E3D187E7202CAFE500E41D1D /* visualrecognitioniosUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = visualrecognitioniosUITests.swift; sourceTree = "<group>"; };
+		E3D187E5202CAFE500E41D1D /* iosvisualrecognitionappUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = iosvisualrecognitionappUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		E3D187E7202CAFE500E41D1D /* iosvisualrecognitionappUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iosvisualrecognitionappUITests.swift; sourceTree = "<group>"; };
 		E3D187E9202CAFE500E41D1D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E3F7DD47202BF58D00F857C3 /* ApplicationError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApplicationError.swift; sourceTree = "<group>"; };
 		E544B14066F29C9013C2DBC8 /* Pods_visualrecognitioniosTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_visualrecognitioniosTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -123,9 +123,9 @@
 		555C919F1D0F0731003E84E3 = {
 			isa = PBXGroup;
 			children = (
-				555C91AA1D0F0731003E84E3 /* visualrecognitionios */,
-				E3D187D8202CAFBE00E41D1D /* visualrecognitioniosTests */,
-				E3D187E6202CAFE500E41D1D /* visualrecognitioniosUITests */,
+				555C91AA1D0F0731003E84E3 /* iosvisualrecognitionapp */,
+				E3D187D8202CAFBE00E41D1D /* iosvisualrecognitionappTests */,
+				E3D187E6202CAFE500E41D1D /* iosvisualrecognitionappUITests */,
 				555C91A91D0F0731003E84E3 /* Products */,
 				A4160B77D037FA5B9F790955 /* Pods */,
 				545C9DD4D3D79A706E9BC9CE /* Frameworks */,
@@ -135,14 +135,14 @@
 		555C91A91D0F0731003E84E3 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				555C91A81D0F0731003E84E3 /* visualrecognitionios.app */,
-				E3D187D7202CAFBE00E41D1D /* visualrecognitioniosTests.xctest */,
-				E3D187E5202CAFE500E41D1D /* visualrecognitioniosUITests.xctest */,
+				555C91A81D0F0731003E84E3 /* iosvisualrecognitionapp.app */,
+				E3D187D7202CAFBE00E41D1D /* iosvisualrecognitionappTests.xctest */,
+				E3D187E5202CAFE500E41D1D /* iosvisualrecognitionappUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		555C91AA1D0F0731003E84E3 /* visualrecognitionios */ = {
+		555C91AA1D0F0731003E84E3 /* iosvisualrecognitionapp */ = {
 			isa = PBXGroup;
 			children = (
 				AADF5FF554684D5797BED935 /* BMSCredentials.plist */,
@@ -156,7 +156,7 @@
 				555C91B21D0F0731003E84E3 /* Assets.xcassets */,
 				555C91B71D0F0731003E84E3 /* Info.plist */,
 			);
-			path = visualrecognitionios;
+			path = iosvisualrecognitionapp;
 			sourceTree = "<group>";
 		};
 		A4160B77D037FA5B9F790955 /* Pods */ = {
@@ -172,30 +172,30 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
-		E3D187D8202CAFBE00E41D1D /* visualrecognitioniosTests */ = {
+		E3D187D8202CAFBE00E41D1D /* iosvisualrecognitionappTests */ = {
 			isa = PBXGroup;
 			children = (
-				E3D187D9202CAFBE00E41D1D /* visualrecognitioniosTests.swift */,
+				E3D187D9202CAFBE00E41D1D /* iosvisualrecognitionappTests.swift */,
 				E3D187DB202CAFBE00E41D1D /* Info.plist */,
 			);
-			path = visualrecognitioniosTests;
+			path = iosvisualrecognitionappTests;
 			sourceTree = "<group>";
 		};
-		E3D187E6202CAFE500E41D1D /* visualrecognitioniosUITests */ = {
+		E3D187E6202CAFE500E41D1D /* iosvisualrecognitionappUITests */ = {
 			isa = PBXGroup;
 			children = (
-				E3D187E7202CAFE500E41D1D /* visualrecognitioniosUITests.swift */,
+				E3D187E7202CAFE500E41D1D /* iosvisualrecognitionappUITests.swift */,
 				E3D187E9202CAFE500E41D1D /* Info.plist */,
 			);
-			path = visualrecognitioniosUITests;
+			path = iosvisualrecognitionappUITests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		555C91A71D0F0731003E84E3 /* visualrecognitionios */ = {
+		555C91A71D0F0731003E84E3 /* iosvisualrecognitionapp */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 555C91D01D0F0731003E84E3 /* Build configuration list for PBXNativeTarget "visualrecognitionios" */;
+			buildConfigurationList = 555C91D01D0F0731003E84E3 /* Build configuration list for PBXNativeTarget "iosvisualrecognitionapp" */;
 			buildPhases = (
 				E48551C04942F6AAA79A91F5 /* [CP] Check Pods Manifest.lock */,
 				555C91A41D0F0731003E84E3 /* Sources */,
@@ -208,14 +208,14 @@
 			);
 			dependencies = (
 			);
-			name = visualrecognitionios;
+			name = iosvisualrecognitionapp;
 			productName = visualrecognitionios;
-			productReference = 555C91A81D0F0731003E84E3 /* visualrecognitionios.app */;
+			productReference = 555C91A81D0F0731003E84E3 /* iosvisualrecognitionapp.app */;
 			productType = "com.apple.product-type.application";
 		};
-		E3D187D6202CAFBE00E41D1D /* visualrecognitioniosTests */ = {
+		E3D187D6202CAFBE00E41D1D /* iosvisualrecognitionappTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = E3D187E0202CAFBE00E41D1D /* Build configuration list for PBXNativeTarget "visualrecognitioniosTests" */;
+			buildConfigurationList = E3D187E0202CAFBE00E41D1D /* Build configuration list for PBXNativeTarget "iosvisualrecognitionappTests" */;
 			buildPhases = (
 				142E7C609BE1012F55D5013D /* [CP] Check Pods Manifest.lock */,
 				E3D187D3202CAFBE00E41D1D /* Sources */,
@@ -227,14 +227,14 @@
 			dependencies = (
 				E3D187DD202CAFBE00E41D1D /* PBXTargetDependency */,
 			);
-			name = visualrecognitioniosTests;
+			name = iosvisualrecognitionappTests;
 			productName = visualrecognitioniosTests;
-			productReference = E3D187D7202CAFBE00E41D1D /* visualrecognitioniosTests.xctest */;
+			productReference = E3D187D7202CAFBE00E41D1D /* iosvisualrecognitionappTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		E3D187E4202CAFE500E41D1D /* visualrecognitioniosUITests */ = {
+		E3D187E4202CAFE500E41D1D /* iosvisualrecognitionappUITests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = E3D187EC202CAFE600E41D1D /* Build configuration list for PBXNativeTarget "visualrecognitioniosUITests" */;
+			buildConfigurationList = E3D187EC202CAFE600E41D1D /* Build configuration list for PBXNativeTarget "iosvisualrecognitionappUITests" */;
 			buildPhases = (
 				E59D57382075C7E8D79AC2D3 /* [CP] Check Pods Manifest.lock */,
 				E3D187E1202CAFE500E41D1D /* Sources */,
@@ -246,9 +246,9 @@
 			dependencies = (
 				E3D187EB202CAFE500E41D1D /* PBXTargetDependency */,
 			);
-			name = visualrecognitioniosUITests;
+			name = iosvisualrecognitionappUITests;
 			productName = visualrecognitioniosUITests;
-			productReference = E3D187E5202CAFE500E41D1D /* visualrecognitioniosUITests.xctest */;
+			productReference = E3D187E5202CAFE500E41D1D /* iosvisualrecognitionappUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 /* End PBXNativeTarget section */
@@ -279,12 +279,11 @@
 					};
 				};
 			};
-			buildConfigurationList = 555C91A31D0F0731003E84E3 /* Build configuration list for PBXProject "visualrecognitionios" */;
+			buildConfigurationList = 555C91A31D0F0731003E84E3 /* Build configuration list for PBXProject "iosvisualrecognitionapp" */;
 			compatibilityVersion = "Xcode 3.2";
-			developmentRegion = English;
+			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
-				English,
 				en,
 				Base,
 			);
@@ -293,9 +292,9 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				555C91A71D0F0731003E84E3 /* visualrecognitionios */,
-				E3D187D6202CAFBE00E41D1D /* visualrecognitioniosTests */,
-				E3D187E4202CAFE500E41D1D /* visualrecognitioniosUITests */,
+				555C91A71D0F0731003E84E3 /* iosvisualrecognitionapp */,
+				E3D187D6202CAFBE00E41D1D /* iosvisualrecognitionappTests */,
+				E3D187E4202CAFE500E41D1D /* iosvisualrecognitionappUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -430,7 +429,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E3D187DA202CAFBE00E41D1D /* visualrecognitioniosTests.swift in Sources */,
+				E3D187DA202CAFBE00E41D1D /* iosvisualrecognitionappTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -438,7 +437,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E3D187E8202CAFE500E41D1D /* visualrecognitioniosUITests.swift in Sources */,
+				E3D187E8202CAFE500E41D1D /* iosvisualrecognitionappUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -447,12 +446,12 @@
 /* Begin PBXTargetDependency section */
 		E3D187DD202CAFBE00E41D1D /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 555C91A71D0F0731003E84E3 /* visualrecognitionios */;
+			target = 555C91A71D0F0731003E84E3 /* iosvisualrecognitionapp */;
 			targetProxy = E3D187DC202CAFBE00E41D1D /* PBXContainerItemProxy */;
 		};
 		E3D187EB202CAFE500E41D1D /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 555C91A71D0F0731003E84E3 /* visualrecognitionios */;
+			target = 555C91A71D0F0731003E84E3 /* iosvisualrecognitionapp */;
 			targetProxy = E3D187EA202CAFE500E41D1D /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -588,11 +587,11 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)",
 				);
-				INFOPLIST_FILE = visualrecognitionios/Info.plist;
+				INFOPLIST_FILE = iosvisualrecognitionapp/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.ibm.visualrecognitionios;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_BUNDLE_IDENTIFIER = com.ibm.iosvisualrecognitionapp;
+				PRODUCT_NAME = iosvisualrecognitionapp;
 				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
@@ -606,11 +605,11 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)",
 				);
-				INFOPLIST_FILE = visualrecognitionios/Info.plist;
+				INFOPLIST_FILE = iosvisualrecognitionapp/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.ibm.visualrecognitionios;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_BUNDLE_IDENTIFIER = com.ibm.iosvisualrecognitionapp;
+				PRODUCT_NAME = iosvisualrecognitionapp;
 				SWIFT_VERSION = 5.0;
 			};
 			name = Release;
@@ -635,7 +634,7 @@
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/visualrecognitionios.app/visualrecognitionios";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/iosvisualrecognitionapp.app/iosvisualrecognitionapp";
 			};
 			name = Debug;
 		};
@@ -658,7 +657,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/visualrecognitionios.app/visualrecognitionios";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/iosvisualrecognitionapp.app/iosvisualrecognitionapp";
 			};
 			name = Release;
 		};
@@ -710,7 +709,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		555C91A31D0F0731003E84E3 /* Build configuration list for PBXProject "visualrecognitionios" */ = {
+		555C91A31D0F0731003E84E3 /* Build configuration list for PBXProject "iosvisualrecognitionapp" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				555C91CE1D0F0731003E84E3 /* Debug */,
@@ -719,7 +718,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		555C91D01D0F0731003E84E3 /* Build configuration list for PBXNativeTarget "visualrecognitionios" */ = {
+		555C91D01D0F0731003E84E3 /* Build configuration list for PBXNativeTarget "iosvisualrecognitionapp" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				555C91D11D0F0731003E84E3 /* Debug */,
@@ -728,7 +727,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		E3D187E0202CAFBE00E41D1D /* Build configuration list for PBXNativeTarget "visualrecognitioniosTests" */ = {
+		E3D187E0202CAFBE00E41D1D /* Build configuration list for PBXNativeTarget "iosvisualrecognitionappTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				E3D187DE202CAFBE00E41D1D /* Debug */,
@@ -737,7 +736,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		E3D187EC202CAFE600E41D1D /* Build configuration list for PBXNativeTarget "visualrecognitioniosUITests" */ = {
+		E3D187EC202CAFE600E41D1D /* Build configuration list for PBXNativeTarget "iosvisualrecognitionappUITests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				E3D187ED202CAFE600E41D1D /* Debug */,

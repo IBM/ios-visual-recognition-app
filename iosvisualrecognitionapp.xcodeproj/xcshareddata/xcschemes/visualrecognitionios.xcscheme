@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "555C91A71D0F0731003E84E3"
-               BuildableName = "visualrecognitionios.app"
-               BlueprintName = "visualrecognitionios"
-               ReferencedContainer = "container:visualrecognitionios.xcodeproj">
+               BuildableName = "iosvisualrecognitionapp.app"
+               BlueprintName = "iosvisualrecognitionapp"
+               ReferencedContainer = "container:iosvisualrecognitionapp.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -31,9 +31,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "555C91A71D0F0731003E84E3"
-            BuildableName = "visualrecognitionios.app"
-            BlueprintName = "visualrecognitionios"
-            ReferencedContainer = "container:visualrecognitionios.xcodeproj">
+            BuildableName = "iosvisualrecognitionapp.app"
+            BlueprintName = "iosvisualrecognitionapp"
+            ReferencedContainer = "container:iosvisualrecognitionapp.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <Testables>
@@ -42,9 +42,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "E3D187D6202CAFBE00E41D1D"
-               BuildableName = "visualrecognitioniosTests.xctest"
-               BlueprintName = "visualrecognitioniosTests"
-               ReferencedContainer = "container:visualrecognitionios.xcodeproj">
+               BuildableName = "iosvisualrecognitionappTests.xctest"
+               BlueprintName = "iosvisualrecognitionappTests"
+               ReferencedContainer = "container:iosvisualrecognitionapp.xcodeproj">
             </BuildableReference>
          </TestableReference>
          <TestableReference
@@ -52,9 +52,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "E3D187E4202CAFE500E41D1D"
-               BuildableName = "visualrecognitioniosUITests.xctest"
-               BlueprintName = "visualrecognitioniosUITests"
-               ReferencedContainer = "container:visualrecognitionios.xcodeproj">
+               BuildableName = "iosvisualrecognitionappUITests.xctest"
+               BlueprintName = "iosvisualrecognitionappUITests"
+               ReferencedContainer = "container:iosvisualrecognitionapp.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
@@ -74,9 +74,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "555C91A71D0F0731003E84E3"
-            BuildableName = "visualrecognitionios.app"
-            BlueprintName = "visualrecognitionios"
-            ReferencedContainer = "container:visualrecognitionios.xcodeproj">
+            BuildableName = "iosvisualrecognitionapp.app"
+            BlueprintName = "iosvisualrecognitionapp"
+            ReferencedContainer = "container:iosvisualrecognitionapp.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </LaunchAction>
@@ -91,9 +91,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "555C91A71D0F0731003E84E3"
-            BuildableName = "visualrecognitionios.app"
-            BlueprintName = "visualrecognitionios"
-            ReferencedContainer = "container:visualrecognitionios.xcodeproj">
+            BuildableName = "iosvisualrecognitionapp.app"
+            BlueprintName = "iosvisualrecognitionapp"
+            ReferencedContainer = "container:iosvisualrecognitionapp.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

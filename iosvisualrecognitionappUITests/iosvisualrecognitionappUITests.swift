@@ -8,7 +8,7 @@
 
 import XCTest
 
-class visualrecognitioniosUITests: XCTestCase {
+class iosvisualrecognitionappUITests: XCTestCase {
 
     override func setUp() {
         super.setUp()
