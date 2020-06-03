@@ -159,26 +159,31 @@ class ViewController: UIViewController, UICollectionViewDataSource, UINavigation
                 showAlert(.missingCredentials)
                 return
         }
+        
+        guard let visRecConfig = configuration["visualRecognition"] as? NSDictionary else {
+            showAlert(.invalidCredentials)
+            return
+        }
 
         // Get the Service URL
-        guard let url = configuration["visualrecognitionUrl"] as? String else {
+        guard let url = visRecConfig["url"] as? String else {
             showAlert(.invalidCredentials)
             return
         }
 
         // Set date string for version of Watson service to use
-        let versionDate = "2018-02-01"
+        let versionDate = "2018-03-19"
 
         // Set the Watson credentials for Visual Recognition service from the BMSCredentials.plist
         // If using IAM authentication
-        if let apiKey = configuration["visualrecognitionApikey"] as? String {
+        if let apiKey = visRecConfig["apikey"] as? String {
 
             // Create service sdks
             let authenticator = WatsonIAMAuthenticator(apiKey: apiKey)
             self.visualRecognition = VisualRecognition(version: versionDate, authenticator: authenticator)
 
         // If using user/pwd authentication
-        } else if let apiKey = configuration["visualrecognitionApi_key"] as? String {
+        } else if let apiKey = visRecConfig["api_key"] as? String {
 
             // Create service sdks
             let authenticator = WatsonIAMAuthenticator(apiKey: apiKey)

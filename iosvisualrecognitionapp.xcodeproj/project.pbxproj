@@ -123,9 +123,9 @@
 		555C919F1D0F0731003E84E3 = {
 			isa = PBXGroup;
 			children = (
-				555C91AA1D0F0731003E84E3 /* iosvisualrecognitionapp */,
-				E3D187D8202CAFBE00E41D1D /* iosvisualrecognitionappTests */,
-				E3D187E6202CAFE500E41D1D /* iosvisualrecognitionappUITests */,
+				555C91AA1D0F0731003E84E3 /* iosapp */,
+				E3D187D8202CAFBE00E41D1D /* iosappTests */,
+				E3D187E6202CAFE500E41D1D /* iosappUITests */,
 				555C91A91D0F0731003E84E3 /* Products */,
 				A4160B77D037FA5B9F790955 /* Pods */,
 				545C9DD4D3D79A706E9BC9CE /* Frameworks */,
@@ -142,7 +142,7 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		555C91AA1D0F0731003E84E3 /* iosvisualrecognitionapp */ = {
+		555C91AA1D0F0731003E84E3 /* iosapp */ = {
 			isa = PBXGroup;
 			children = (
 				AADF5FF554684D5797BED935 /* BMSCredentials.plist */,
@@ -156,7 +156,7 @@
 				555C91B21D0F0731003E84E3 /* Assets.xcassets */,
 				555C91B71D0F0731003E84E3 /* Info.plist */,
 			);
-			path = iosvisualrecognitionapp;
+			path = iosapp;
 			sourceTree = "<group>";
 		};
 		A4160B77D037FA5B9F790955 /* Pods */ = {
@@ -172,22 +172,22 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
-		E3D187D8202CAFBE00E41D1D /* iosvisualrecognitionappTests */ = {
+		E3D187D8202CAFBE00E41D1D /* iosappTests */ = {
 			isa = PBXGroup;
 			children = (
 				E3D187D9202CAFBE00E41D1D /* iosvisualrecognitionappTests.swift */,
 				E3D187DB202CAFBE00E41D1D /* Info.plist */,
 			);
-			path = iosvisualrecognitionappTests;
+			path = iosappTests;
 			sourceTree = "<group>";
 		};
-		E3D187E6202CAFE500E41D1D /* iosvisualrecognitionappUITests */ = {
+		E3D187E6202CAFE500E41D1D /* iosappUITests */ = {
 			isa = PBXGroup;
 			children = (
 				E3D187E7202CAFE500E41D1D /* iosvisualrecognitionappUITests.swift */,
 				E3D187E9202CAFE500E41D1D /* Info.plist */,
 			);
-			path = iosvisualrecognitionappUITests;
+			path = iosappUITests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -516,7 +516,8 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				"INFOPLIST_FILE[sdk=*]" = iosapp/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -568,7 +569,8 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				"INFOPLIST_FILE[sdk=*]" = iosapp/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
@@ -587,7 +589,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)",
 				);
-				INFOPLIST_FILE = iosvisualrecognitionapp/Info.plist;
+				INFOPLIST_FILE = iosapp/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.ibm.iosvisualrecognitionapp;
@@ -605,7 +607,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)",
 				);
-				INFOPLIST_FILE = iosvisualrecognitionapp/Info.plist;
+				INFOPLIST_FILE = iosapp/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.ibm.iosvisualrecognitionapp;
@@ -626,10 +628,10 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
-				INFOPLIST_FILE = visualrecognitioniosTests/Info.plist;
+				INFOPLIST_FILE = iosappTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.ibm.BluePic-iOS.visualrecognitioniosTests";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.ibm.BluePic-iOS.iosvisualrecognitionappTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_VERSION = 5.0;
@@ -650,10 +652,10 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
-				INFOPLIST_FILE = visualrecognitioniosTests/Info.plist;
+				INFOPLIST_FILE = iosappTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.ibm.BluePic-iOS.visualrecognitioniosTests";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.ibm.BluePic-iOS.iosvisualrecognitionappTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -672,10 +674,10 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
-				INFOPLIST_FILE = visualrecognitioniosUITests/Info.plist;
+				INFOPLIST_FILE = iosappUITests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.ibm.BluePic-iOS.visualrecognitioniosUITests";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.ibm.BluePic-iOS.iosvisualrecognitionappUITests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_VERSION = 5.0;
@@ -695,10 +697,10 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
-				INFOPLIST_FILE = visualrecognitioniosUITests/Info.plist;
+				INFOPLIST_FILE = iosappUITests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.ibm.BluePic-iOS.visualrecognitioniosUITests";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.ibm.BluePic-iOS.iosvisualrecognitionappUITests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
